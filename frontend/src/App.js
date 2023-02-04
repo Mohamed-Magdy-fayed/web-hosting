@@ -11,6 +11,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import { checkAuth } from './api/auth';
 import AppLoading from './components/shared/AppLoading';
 import StoreContext from './context/store/StoreContext';
+import Cart from './components/Cart';
+import Footer from './components/Footer';
 
 function App() {
   const { store, setLoading, login, logout } = useContext(StoreContext)
@@ -37,7 +39,7 @@ function App() {
   if (store.loading) return <AppLoading />
 
   return (
-    <>
+    <div className='min-h-screen grid grid-rows-[auto_1fr_auto]'>
       <Navbar />
       <ToastContainer
         position="bottom-right"
@@ -58,8 +60,10 @@ function App() {
         <Route path="features" element={<Featrues />} />
         <Route path="learn" element={<Learn />} />
         <Route path="support" element={<Support />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
-    </>
+      <Footer />
+    </div>
   );
 }
 

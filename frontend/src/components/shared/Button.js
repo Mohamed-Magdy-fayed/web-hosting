@@ -7,13 +7,13 @@ const Button = ({ url, text, type, click, disabled }) => {
 
     switch (type) {
         case 'primary':
-            colorClasses = 'hover:bg-blue text-white bg-green'
+            colorClasses = 'hover:bg-accent text-white bg-primary'
             break;
         case 'accent':
-            colorClasses = 'hover:bg-green text-white bg-blue'
+            colorClasses = 'hover:bg-primary text-white bg-accent'
             break;
         case 'warn':
-            colorClasses = 'hover:bg-red text-white bg-orange'
+            colorClasses = 'hover:bg-warn text-white bg-accent'
             break;
 
         default:

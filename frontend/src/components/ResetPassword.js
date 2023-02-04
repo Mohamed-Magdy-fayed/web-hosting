@@ -62,18 +62,18 @@ const ResetPassword = () => {
                     <img className='h-64' src={logo} alt='logo' />
                 </div>
                 <div className='flex flex-col gap-4 justify-self-start text-center shadow-md rounded-lg border-t-2 border-t-green'>
-                    <h1 className='p-2 rounded-t-lg text-2xl font-bold'>Reset your <span className=' text-blue'>password</span></h1>
+                    <h1 className='p-2 rounded-t-lg text-2xl font-bold'>Reset your <span className=' text-primary'>password</span></h1>
                     <form className='flex flex-col p-4 gap-4 min-w-[30rem] rounded-b-lg'>
                         <div className='flex flex-col gap-2'>
-                            <label className='text-left text-blue'>New Password</label>
+                            <label className='text-left text-primary'>New Password</label>
                             <input onChange={(e) => setPassword(e.target.value)} value={password} required type='password' className='border-2 rounded border-gray-200 focus-visible:border-blue p-2 focus-visible:outline-none' placeholder='new password' />
                         </div>
                         <div className='flex flex-col gap-2'>
-                            <label className='text-left text-blue'>Confirm your password</label>
+                            <label className='text-left text-primary'>Confirm your password</label>
                             <input onChange={(e) => setPasswordConf(e.target.value)} value={passwordConf} required type='password' className='border-2 rounded border-gray-200 focus-visible:border-blue p-2 focus-visible:outline-none' placeholder='confirm password' />
                         </div>
                         <div className='flex justify-around'>
-                            <Link className=' text-green hover:text-orange' to='/signin'>Go to login</Link>
+                            <Link className=' text-primary hover:text-accent' to='/signin'>Go to login</Link>
                         </div>
                         <Button disabled={loadingBtn} click={handleSendResetpassword} text='Reset' type='warn'></Button>
                     </form>
@@ -88,14 +88,14 @@ const ResetPassword = () => {
                 <img className='h-64' src={logo} alt='logo' />
             </div>
             <div className='flex flex-col gap-4 justify-self-start text-center shadow-md rounded-lg border-t-2 border-t-green'>
-                <h1 className='p-2 rounded-t-lg text-2xl font-bold'>Reset your <span className=' text-blue'>password</span></h1>
+                <h1 className='p-2 rounded-t-lg text-2xl font-bold'>Reset your <span className=' text-primary'>password</span></h1>
                 <form className='flex flex-col p-4 gap-4 min-w-[30rem] rounded-b-lg'>
                     <div className='flex flex-col gap-2'>
-                        <label className='text-left text-blue'>Email</label>
+                        <label className='text-left text-primary'>Email</label>
                         <input onChange={(e) => setEmail(e.target.value)} value={email} required type='email' className='border-2 rounded border-gray-200 focus-visible:border-blue p-2 focus-visible:outline-none' placeholder='email@email.com' />
                     </div>
                     <div className='flex justify-around'>
-                        <Link className=' text-green hover:text-orange' to='/signin'>Go to login</Link>
+                        <Link className=' text-primary hover:text-accent' to='/signin'>Go to login</Link>
                     </div>
                     <Button disabled={loadingBtn} click={handleResetpassword} text='Reset' type='warn'></Button>
                 </form>

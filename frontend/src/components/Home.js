@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import heroIMG from '../misc/hero-img.png'
 import img1 from '../misc/img1.jpeg'
 
 const Home = () => {
+  const navigate = useNavigate()
+
   return (
     <div>
       <section className="h-screen w-full grid grid-cols-[1fr_50%] gap-10 justify-between items-center pl-[100px] pr-[76px]">
@@ -12,7 +15,7 @@ const Home = () => {
           <span className=" text-2xl">Get 24/7 Google support from real humans.</span>
           <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
             <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-            <button className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-[#1a73e8] border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
+            <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-[#1a73e8] border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
           </form>
           <a className=" text-[#1a73e8] no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Transfer a domain you already own</a>
         </div>
@@ -92,9 +95,9 @@ const Home = () => {
           </a>
         </div>
       </section>
-      <section class="md:m-[0_auto] md:max-w-[1440] md:!overflow-x-visible relative">
-        <div class=" relative z-50">
-          <h2 class="lg:pt-[113px] md:pt-[85px] md:pb-[60px] lg:text-4xl leading-[44px] font-[Arial,sans-serif;] text-center p-[64px_25px_8px]">
+      <section className="md:m-[0_auto] md:max-w-[1440] md:!overflow-x-visible relative">
+        <div className=" relative z-50">
+          <h2 className="lg:pt-[113px] md:pt-[85px] md:pb-[60px] lg:text-4xl leading-[44px] font-[Arial,sans-serif;] text-center p-[64px_25px_8px]">
             <span>
               All the tools to get started. All in one&nbsp;place.
             </span>

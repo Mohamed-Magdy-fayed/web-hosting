@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { logoutUser } from '../api/auth'
 import StoreContext from '../context/store/StoreContext'
-import logo from '../misc/logo.png'
+import logo from '../misc/clikkle host logo 2.png'
 import Button from './shared/Button'
 
 const navItems = [
@@ -51,10 +51,9 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='flex gap-12 justify-between px-8 min-h-[3rem] shadow sticky top-0 bg-gray-100'>
+        <nav className='flex gap-12 justify-between px-8 min-h-[3rem] shadow sticky top-0 bg-gray-100 z-[1000]'>
             <Link to='/' className='flex gap-4 py-2 justify-center items-center'>
                 <img className='h-12' src={logo} alt='logo' />
-                <span>Clikkle HOST</span>
             </Link>
             <div className='flex m-0 justify-around items-center'>
                 {navItems.map(item => (

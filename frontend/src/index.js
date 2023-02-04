@@ -19,6 +19,7 @@ import { StoreProvider } from './context/store/StoreContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ResetPassword from './components/ResetPassword';
+import Cart from './components/Cart';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: 'support',
         element: <Support />
+      },
+      {
+        path: 'cart',
+        element: <Cart />
       },
     ]
   },
