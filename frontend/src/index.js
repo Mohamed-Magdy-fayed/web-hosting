@@ -20,6 +20,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ResetPassword from './components/ResetPassword';
 import Cart from './components/Cart';
+import Dashboard from './components/dashboardComponents/Dashboard';
+import MyDomains from './components/dashboardComponents/MyDomains';
+import GetNewDomain from './components/dashboardComponents/GetNewDomain';
+import { ThemeProvider } from "@material-tailwind/react";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +58,20 @@ const router = createBrowserRouter([
         path: 'cart',
         element: <Cart />
       },
+      {
+        path: 'dashboard/*',
+        element: <Dashboard />,
+        children: [
+          {
+            path: '',
+            element: <MyDomains />
+          },
+          {
+            path: 'getnewdomain',
+            element: <GetNewDomain />
+          },
+        ]
+      },
     ]
   },
   {
@@ -75,23 +93,26 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <StoreProvider>
-      <RouterProvider router={router} />
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      ></ToastContainer>
-    </StoreProvider>
+    <ThemeProvider>
+      <StoreProvider>
+        <RouterProvider router={router} />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        ></ToastContainer>
+      </StoreProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

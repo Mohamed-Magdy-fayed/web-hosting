@@ -26,6 +26,14 @@ const storeReducer = (state, action) => {
                 ...state,
                 loading: action.payload,
             }
+        case 'TOGGLE_DASHBOARD_MENU':
+            logger(state, action)
+            return {
+                ...state,
+                dashboardMenu: {
+                    isOpened: !state.dashboardMenu.isOpened
+                },
+            }
         default:
             return state
     }

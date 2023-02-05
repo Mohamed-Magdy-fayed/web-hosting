@@ -10,7 +10,10 @@ export const StoreProvider = ({ children }) => {
       user: {},
       authed: false
     },
-    loading: true
+    loading: true,
+    dashboardMenu: {
+      isOpened: true
+    }
   };
 
   const [store, dispatch] = useReducer(storeReducer, initialState);
@@ -35,12 +38,19 @@ export const StoreProvider = ({ children }) => {
     })
   }
 
+  const toggleDashboardMenu = () => {
+    dispatch({
+      type: 'TOGGLE_DASHBOARD_MENU',
+    })
+  }
+
   return (
     <StoreContext.Provider value={{
       store,
       login,
       logout,
       setLoading,
+      toggleDashboardMenu,
     }}>
       {children}
     </StoreContext.Provider>

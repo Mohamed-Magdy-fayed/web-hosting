@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { checkAuth, loginUser } from '../api/auth';
 import StoreContext from '../context/store/StoreContext'
-import logo from '../misc/clikkle host logo 2.png'
+import logo from '../misc/logo.png'
 import Button from './shared/Button'
 import validator from "validator";
 import AppLoading from './shared/AppLoading';
@@ -26,7 +26,7 @@ const Signin = () => {
           login({ user: res.data.user })
           toast.success(`Welcome ${res.data.user.name}`)
           setLoadingBtn(false)
-          navigate('/')
+          navigate('/dashboard')
         })
         .catch(e => {
           console.log(e);
@@ -46,7 +46,7 @@ const Signin = () => {
         if (res.data.user) {
           login({ user: res.data.user })
           setLoading(false)
-          navigate('/')
+          navigate('/dashboard')
         }
       })
       .catch(e => {
