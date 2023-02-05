@@ -25,9 +25,9 @@ getDomainNames()
 
 const GetNewDomain = () => {
   const [searchQuery, setSearchQuery] = useState('')
-  const [availableOnly, setAvailableOnly] = useState(true)
-  const [priceLimit, setPriceLimit] = useState(10)
-  const [endings, setEndings] = useState(['.net', '.com', '.me', '.dev',])
+  const [availableOnly, setAvailableOnly] = useState(false)
+  const [priceLimit, setPriceLimit] = useState(0)
+  const [endings, setEndings] = useState([])
   const [filtersOpened, setFiltersOpened] = useState(false);
   const [filtersOpenedInitData, setFiltersOpenedInitData] = useState({});
   const [open, setOpen] = useState(0);

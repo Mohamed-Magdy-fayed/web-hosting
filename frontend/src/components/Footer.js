@@ -5,7 +5,7 @@ const Footer = () => {
     const navigate = useNavigate()
 
     return (
-        <div className=' bg-[#36344d] py-8 px-16 text-[#dadce0] text-sm flex flex-col gap-4 w-full'>
+        <div className=' bg-[#36344d] py-8 px-16 text-[#dadce0] text-sm flex flex-col gap-4 w-full mt-12'>
             <div className='flex gap-8 px-4 mx-auto'>
                 <span className=' text-sm'>© 2020-2023 OurSite.com</span>
                 <span onClick={() => navigate('/')} className='text-white cursor-pointer hover:underline'>Terms of Service</span>

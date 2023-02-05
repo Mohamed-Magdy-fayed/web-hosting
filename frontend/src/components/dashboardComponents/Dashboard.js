@@ -10,6 +10,7 @@ import Transfer from './Transfer'
 import Billing from './Billing'
 import Account from './Account'
 import { Button, Dialog, DialogBody, DialogHeader } from '@material-tailwind/react'
+import Domain from './Domain'
 
 const dashboardMenuItems = [
   { url: '/dashboard/getnewdomain', itemName: 'Get a new domain', icon: FaSearch },
@@ -52,6 +53,7 @@ const Dashboard = () => {
           <Route path="transfer" element={<Transfer />} />
           <Route path="billing" element={<Billing />} />
           <Route path="account" element={<Account />} />
+          <Route path="domains/:id" element={<Domain />} />
         </Routes>
       </div>
       <Dialog open={open.isOpened} handler={() => setOpen({ isOpened: false, title: '' })}>
