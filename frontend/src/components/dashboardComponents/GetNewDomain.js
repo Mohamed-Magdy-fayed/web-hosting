@@ -61,7 +61,7 @@ const GetNewDomain = () => {
   }
 
   return (
-    <div className=''>
+    <div className='px-4 md:px-8 xl:px-16 2xl:px-24'>
       <Dialog open={filtersOpened} handler={handleOpenFilters}>
         <DialogHeader>Filter your search</DialogHeader>
         <DialogBody>
@@ -98,7 +98,7 @@ const GetNewDomain = () => {
           </div>
         </DialogBody>
       </Dialog>
-      <div className='flex gap-4 items-center max-w-3xl m-auto pt-24'>
+      <div className='flex gap-4 items-center max-w-3xl m-auto pt-12'>
         <Button onClick={() => handleOpenFilters(true)} className=''>
           <FaFilter></FaFilter>
         </Button>
@@ -150,7 +150,7 @@ const GetNewDomain = () => {
                 <div className='flex items-center gap-2'>
                   {domain.isAvailable ? <AiFillCheckCircle className='text-[#1e8e3e]'></AiFillCheckCircle> : <MdOutlineDoNotDisturbAlt className=' text-gray-600'></MdOutlineDoNotDisturbAlt>}
                   <Typography variant='lead'>{domain.name}</Typography>
-                  {domain.isPremium && <Chip value='Premium'></Chip>}
+                  {domain.isPremium && <Chip className='hidden md:block' value='Premium'></Chip>}
                 </div>
                 <div className='ml-auto flex items-center justify-around gap-2'>
                   <Typography>${domain.pricePerYear} / year</Typography>

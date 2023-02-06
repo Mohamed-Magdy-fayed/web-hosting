@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import NavbarComponent from './components/Navbar';
 import Home from './components/Home';
 import Overview from './components/Overview';
@@ -19,16 +19,24 @@ import GetNewDomain from './components/dashboardComponents/GetNewDomain';
 import Transfer from './components/dashboardComponents/Transfer';
 import Billing from './components/dashboardComponents/Billing';
 import Account from './components/dashboardComponents/Account';
+import Service from './components/dashboardComponents/Service';
 
 function App() {
   const { store, setLoading, login, logout } = useContext(StoreContext)
   const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     setLoading(true)
     checkAuth()
       .then(res => {
-        if (res.data.message) return setLoading(false)
+        if (res.data.message) {
+          if (location.pathname.includes('dashboard')) {
+            navigate('/signin')
+          }
+          return setLoading(false)
+        }
+
         if (res.data.user) {
           login({ user: res.data.user })
           setLoading(false)
@@ -74,10 +82,11 @@ function App() {
             <Route path="transfer" element={<Transfer />} />
             <Route path="billing" element={<Billing />} />
             <Route path="account" element={<Account />} />
+            <Route path="service/:id" element={<Service />} />
           </Route>
         </Routes>
       </div>
-      <Footer />
+      {!location.pathname.includes('/dashboard') && <Footer />}
     </div>
   );
 }

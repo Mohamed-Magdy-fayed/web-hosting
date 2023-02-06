@@ -7,7 +7,7 @@ const Transfer = () => {
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
-    <div className='max-w-3xl m-auto pt-24'>
+    <div className='max-w-3xl m-auto pt-12 px-4 md:px-8 xl:px-16 2xl:px-24'>
       <Input className='!p-4' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} label="Enter the domain name you want to transfer" icon={<FaSearch />} />
       <div className='flex items-center py-4'>
         <Typography variant='small'>Transferring multiple domains?</Typography>

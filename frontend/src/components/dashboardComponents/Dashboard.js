@@ -1,20 +1,20 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaCreditCard, FaSearch } from 'react-icons/fa'
 import { MdAccountCircle, MdContactSupport, MdFeedback, MdMenu } from 'react-icons/md'
 import { BiTransfer } from 'react-icons/bi'
-import { Link, Route, Routes, useLocation } from 'react-router-dom'
+import { Link, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import StoreContext from '../../context/store/StoreContext'
 import GetNewDomain from './GetNewDomain'
 import MyDomains from './MyDomains'
 import Transfer from './Transfer'
 import Billing from './Billing'
 import Account from './Account'
-import { Button, Dialog, DialogBody, DialogHeader } from '@material-tailwind/react'
-import Domain from './Domain'
+import { Button, Dialog, DialogBody, DialogHeader, Navbar } from '@material-tailwind/react'
+import Service from './Service'
 
 const dashboardMenuItems = [
   { url: '/dashboard/getnewdomain', itemName: 'Get a new domain', icon: FaSearch },
-  { url: '/dashboard', itemName: 'My domains', icon: MdMenu },
+  { url: '/dashboard', itemName: 'My services', icon: MdMenu },
   { url: '/dashboard/transfer', itemName: 'Transfer', icon: BiTransfer },
   { url: '/dashboard/billing', itemName: 'Billing', icon: FaCreditCard },
   { url: '/dashboard/account', itemName: 'Account', icon: MdAccountCircle },
@@ -27,13 +27,22 @@ const otherButtons = [
 
 const Dashboard = () => {
   const location = useLocation()
+  const navigate = useNavigate()
   const [open, setOpen] = useState({ isOpened: false, title: '' })
+  const { store, toggleDashboardMenu, closeDashboardMenu, setLoading, login, logout } = useContext(StoreContext)
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth <= 960 && closeDashboardMenu()
+    );
+  }, []);
 
   return (
-    <div className='flex-grow grid grid-cols-[15rem_1fr] relative'>
-      <div className=' py-4 pr-4 sticky top-0'>
+    <div className='flex-grow flex flex-row relative'>
+      <Navbar className={` h-full rounded-none min-w-max z-50 pl-0 pr-4 flex flex-col w-max transition-all ${store.dashboardMenu.isOpened ? 'translate-x-[0] absolute lg:static' : 'translate-x-[-100%] absolute'}`}>
         {dashboardMenuItems.map(item => (
-          <Link key={item.url} to={item.url} className={`pl-4 text-gray-700 flex gap-2 items-center tracking-wide font-[500_0.875rem/1.25rem_"Google_Sans",Roboto,Arial,sans-serif;] rounded-r-3xl p-2 hover:bg-gray-100 ${location.pathname === item.url ? '!bg-primary !bg-opacity-20' : ''}`}>
+          <Link onClick={toggleDashboardMenu} key={item.url} to={item.url} className={`pl-4 text-gray-700 flex gap-2 items-center tracking-wide font-[500_0.875rem/1.25rem_"Google_Sans",Roboto,Arial,sans-serif;] rounded-r-3xl p-2 hover:bg-gray-100 ${location.pathname === item.url ? '!bg-primary !bg-opacity-20' : ''}`}>
             <item.icon></item.icon>
             <span>{item.itemName}</span>
           </Link>
@@ -45,20 +54,23 @@ const Dashboard = () => {
             <span>{item.itemName}</span>
           </button>
         ))}
-      </div>
-      <div className=''>
+      </Navbar>
+      <div className={`flex-grow`}>
         <Routes>
           <Route index element={<MyDomains />} />
           <Route path="getnewdomain" element={<GetNewDomain />} />
           <Route path="transfer" element={<Transfer />} />
           <Route path="billing" element={<Billing />} />
           <Route path="account" element={<Account />} />
-          <Route path="domains/:id" element={<Domain />} />
+          <Route path="service/:id" element={<Service />} />
         </Routes>
       </div>
-      <Dialog open={open.isOpened} handler={() => setOpen({ isOpened: false, title: '' })}>
+      <Dialog className='min-w-fit' open={open.isOpened} handler={() => setOpen({ isOpened: false, title: '' })}>
         <DialogHeader>{open.title}</DialogHeader>
-        <DialogBody>
+        <DialogBody className=' max-w-sm'>
+          <div>
+            Content
+          </div>
           <div className='flex justify-between'>
             <Button
               variant="text"
@@ -66,7 +78,7 @@ const Dashboard = () => {
               onClick={() => setOpen({ isOpened: false, title: '' })}
               className="mr-1"
             >
-              <span>Cancel</span>
+              Cancel
             </Button>
             <Button variant="gradient" color="green" onClick={() => setOpen({ isOpened: false, title: '' })}>
               <span>Confirm</span>

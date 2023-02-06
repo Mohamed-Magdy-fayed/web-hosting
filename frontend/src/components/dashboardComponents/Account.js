@@ -1,9 +1,5 @@
-import { Accordion, AccordionBody, AccordionHeader, Button, Chip, IconButton, Typography } from '@material-tailwind/react';
+import { Accordion, AccordionBody, AccordionHeader, Button, Typography } from '@material-tailwind/react';
 import React, { useState } from 'react'
-import { AiFillCheckCircle } from 'react-icons/ai';
-import { BiCart, BiHeartCircle } from 'react-icons/bi';
-import { FaLightbulb } from 'react-icons/fa';
-import { MdOutlineDoNotDisturbAlt } from 'react-icons/md';
 
 const Account = () => {
   const [open, setOpen] = useState(0);
@@ -13,7 +9,7 @@ const Account = () => {
   };
 
   return (
-    <div className='flex flex-col gap-12 max-w-3xl m-auto pt-24'>
+    <div className='flex flex-col gap-12 max-w-3xl m-auto pt-12 px-4 md:px-8 xl:px-16 2xl:px-24'>
       <div>
         <Typography variant='lead'>Email notifications</Typography>
         <div className='flex justify-between items-center p-4 relative overflow-hidden border-t border-b border-x rounded-t'>

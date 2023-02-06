@@ -34,6 +34,22 @@ const storeReducer = (state, action) => {
                     isOpened: !state.dashboardMenu.isOpened
                 },
             }
+        case 'OPEN_DASHBOARD_MENU':
+            logger(state, action)
+            return {
+                ...state,
+                dashboardMenu: {
+                    isOpened: true
+                },
+            }
+        case 'CLOSE_DASHBOARD_MENU':
+            logger(state, action)
+            return {
+                ...state,
+                dashboardMenu: {
+                    isOpened: false
+                },
+            }
         default:
             return state
     }

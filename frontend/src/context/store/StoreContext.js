@@ -44,6 +44,18 @@ export const StoreProvider = ({ children }) => {
     })
   }
 
+  const openDashboardMenu = () => {
+    dispatch({
+      type: 'OPEN_DASHBOARD_MENU',
+    })
+  }
+
+  const closeDashboardMenu = () => {
+    dispatch({
+      type: 'CLOSE_DASHBOARD_MENU',
+    })
+  }
+
   return (
     <StoreContext.Provider value={{
       store,
@@ -51,6 +63,8 @@ export const StoreProvider = ({ children }) => {
       logout,
       setLoading,
       toggleDashboardMenu,
+      openDashboardMenu,
+      closeDashboardMenu,
     }}>
       {children}
     </StoreContext.Provider>
