@@ -1,11 +1,11 @@
-import { Button, Typography } from '@material-tailwind/react'
+import { Typography } from '@material-tailwind/react'
 import React from 'react'
 import { AiFillFolder } from 'react-icons/ai'
 import { BsExclamationCircle, BsFillCloudArrowUpFill, BsGlobe2, BsQuestionCircle } from 'react-icons/bs'
 import { FaDatabase, FaIcons } from 'react-icons/fa'
 import { GrServerCluster } from 'react-icons/gr'
 import { MdFileDownload } from 'react-icons/md'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const services = [
   {
