@@ -15,7 +15,7 @@ const navItems = [
     },
     {
         itemName: 'Get started',
-        url: '/getstarted',
+        url: '/getstarted/domainsearch',
         hasChildren: false,
     },
     {
@@ -57,7 +57,7 @@ const NavbarComponent = () => {
     const navList = (
         <div className='flex h-full flex-col gap-0 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-2'>
             {navItems.map(item => (
-                <Link key={item.itemName} className={`py-5 px-2 after:content-[""] after:absolute relative after:bottom-0 after:right-[15%] after:h-1 after:w-[70%] after:rounded-t-md text-black ${location.pathname === item.url ? 'after:bg-primary' : 'border-transparent'} grid items-center h-full`} to={item.url}>
+                <Link onClick={() => setOpenNav(false)} key={item.itemName} className={`py-5 px-2 after:content-[""] after:absolute relative after:bottom-0 after:right-[15%] after:h-1 after:w-[70%] after:rounded-t-md text-black ${location.pathname === item.url ? 'after:bg-primary' : 'border-transparent'} grid items-center h-full`} to={item.url}>
                     <Typography className={`${location.pathname === item.url ? 'text-gray-900' : 'text-gray-600'}`} variant='small'>{item.itemName}</Typography>
                 </Link>
             ))}

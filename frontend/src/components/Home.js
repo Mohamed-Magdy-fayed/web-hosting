@@ -1,7 +1,7 @@
 import { Button, Input, Typography } from '@material-tailwind/react'
 import React from 'react'
 import { FaIcons } from 'react-icons/fa'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../misc/logo.png'
 import HomeSection from './shared/HomeSection'
 
@@ -116,6 +116,9 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <Link to={`/`} className='text-primary pt-12'>
+          More reasons to choose Google Domains
+        </Link>
       </HomeSection>
       <Typography className='w-full mt-12 text-2xl md:text-3xl xl:text-4xl text-center' variant='h1'>
         All the tools to get started. All in one place.

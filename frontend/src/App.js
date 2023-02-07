@@ -71,7 +71,9 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="overview" element={<Overview />} />
-          <Route path="getstarted" element={<GetStarted />} />
+          <Route path="getstarted/*" element={<GetStarted />}>
+            <Route path="domainsearch" element={<GetStarted />} />
+          </Route>
           <Route path="features" element={<Featrues />} />
           <Route path="learn" element={<Learn />} />
           <Route path="support" element={<Support />} />

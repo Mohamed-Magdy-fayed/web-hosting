@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const BasicCard = ({ linkUrl, linkText, head, paragraph, icon }) => {
     return (
         <div className='border-b rounded border w-full shadow flex flex-col md:justify-between gap-2 items-center'>
-            <div className='p-4 flex items-center justify-between w-full gap-4'>
+            <div className='p-4 flex items-center justify-between w-full gap4'>
                 <div className='flex flex-col gap-4 items-start w-full md:w-fit'>
                     <Typography variant='h6'>{head}</Typography>
                     <Typography variant='small'>{paragraph}</Typography>
