@@ -24,19 +24,6 @@ const section2Items = [
     },
 ]
 
-const plans = [
-    { lead: 'Email', small: 'Professional email', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/gmail.svg' },
-    { lead: 'Drive', small: 'Cloud storage and archiving', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/drive.svg' },
-    { lead: 'Calendar', small: 'Shared team calendars', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/calendar.svg' },
-    { lead: 'Meetings', small: 'Video and voice confrencing', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/meet.svg' },
-    { lead: 'Chat', small: 'Team messaging', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/chat.svg' },
-    { lead: 'Docs', small: 'Word processing', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/docs.svg' },
-    { lead: 'Slides', small: 'Presentation builder', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/slides.svg' },
-    { lead: 'Forms', small: 'Survey builder', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/forms.svg' },
-    { lead: 'Sheets', small: 'Spreadsheet builder', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/sheets.svg' },
-    { lead: 'Sites', small: 'Website builder', img: 'https://domains.google/static/images/getting-started/email/gsuite-icons/sites.svg' },
-]
-
 const benefits = [
     {
         name: 'Ads tailored to the results you want',
