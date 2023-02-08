@@ -58,7 +58,7 @@ const OnlineAds = () => {
             <HomeSection imgUrl={logo} imgAlt='hero img' hero>
                 <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Market your business online</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Learn how to get in front of customers and use Google Ads to grow your business.</Typography>
-                <Button>Get Clikkle Ads</Button>
+                <Button className='bg-primary'>Get Clikkle Ads</Button>
             </HomeSection>
             <HomeSection darkerBG centeredTitle={`Get people to visit your website`}>
                 <div className='flex flex-col gap-4'>
@@ -134,7 +134,7 @@ const OnlineAds = () => {
                     <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Find your domain</Typography>
                     <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
                         <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-                        <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-[#1a73e8] border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
+                        <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
                     </form>
                 </div>
                 <div className={`flex justify-center lg:mt-0`}>

@@ -11,7 +11,7 @@ const Transfer = () => {
       <Input className='!p-4' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} label="Enter the domain name you want to transfer" icon={<FaSearch />} />
       <div className='flex items-center py-4'>
         <Typography variant='small'>Transferring multiple domains?</Typography>
-        <Button variant='text'>Start process</Button>
+        <Button className='text-primary ml-4' variant='text'>Start process</Button>
       </div>
       <div className='p-4'>
         <Typography variant='paragraph'>Why transfer to Google Domains?</Typography>

@@ -141,12 +141,14 @@ const NavbarComponent = () => {
                     {!location.pathname.includes('dashboard') && <div className="hidden lg:block">{navList}</div>}
                 </div>
                 <div className='flex gap-4 items-center'>
-                    {!store.auth.authed && !location.pathname.includes('dashboard') && <form className="navbar-form-clikkle !hidden md:!flex" onSubmit={handleSubmit}>
-                        <input type="text" className="navbar-input-clikkle focus-visible:outline-none hidden xl:block" autoComplete="off" aria-label="Search for your domain" placeholder="Search for your domain" />
-                        <button aria-label="Search" type="submit" className="navbar-button-clikkle !p-2 xl:!p-3 !rounded xl:!rounded-l-none" >
-                            <img className='navbar-img-clikkle' alt="Search" aria-label="hidden" src={searchIcon} />
-                        </button>
-                    </form>}
+                    {!store.auth.authed && !location.pathname.includes('dashboard') && (
+                        <form className="navbar-form-clikkle !hidden md:!flex" onSubmit={handleSubmit}>
+                            <input type="text" className="navbar-input-clikkle focus-visible:outline-none hidden xl:block" autoComplete="off" aria-label="Search for your domain" placeholder="Search for your domain" />
+                            <button aria-label="Search" type="submit" className="navbar-button-clikkle !p-2 xl:!p-3 !rounded xl:!rounded-l-none" >
+                                <img className='navbar-img-clikkle' alt="Search" aria-label="hidden" src={searchIcon} />
+                            </button>
+                        </form>
+                    )}
                     {store.auth.authed && !location.pathname.includes('dashboard') ? (
                         <div className='flex justify-around items-center gap-4'>
                             <Button className='!min-w-fit !py-2 !px-8 text-white bg-primary border-primary whitespace-nowrap' variant='outlined' onClick={() => navigate('/dashboard')}>My dashboard</Button>

@@ -88,7 +88,7 @@ const Home = () => {
         <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Choose from more than 300 domain endings. Get 24/7 Google support from real humans.</Typography>
         <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
           <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-          <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-[#1a73e8] border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
+          <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
         </form>
         <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Transfer a domain you already own</a>
       </HomeSection>
@@ -180,19 +180,21 @@ const Home = () => {
         </div>
       </HomeSection>
       <HomeSection mobileImgSecond>
-        <div className='flex flex-col text-center lg:text-left gap-4 justify-center items-center lg:items-start'>
-          <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Find your domain</Typography>
-          <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
-            <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-            <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-[#1a73e8] border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
-          </form>
-        </div>
-        <div className={`flex justify-center lg:mt-0`}>
-          <img
-            className='section-img-clikkle'
-            src={logo}
-            alt={'imgAlt'}
-          />
+        <div className='w-full grid grid-cols-1 lg:grid-cols-2 pb-12 pt-12 gap-10 px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32'>
+          <div className='flex flex-col text-center lg:text-left gap-4 justify-center items-center lg:items-start'>
+            <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Find your domain</Typography>
+            <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
+              <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
+              <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
+            </form>
+          </div>
+          <div className={`flex justify-center lg:mt-0`}>
+            <img
+              className='section-img-clikkle'
+              src={logo}
+              alt={'imgAlt'}
+            />
+          </div>
         </div>
       </HomeSection>
       <div className='bg-gray-100 p-8 flex flex-col w-full gap-4 items-start lg:flex-row lg:items-center lg:justify-between'>

@@ -69,14 +69,14 @@ const GetNewDomain = () => {
             <h1>Availablity</h1>
             <div className='flex items-center justify-between'>
               <span>Show available names only</span>
-              <Switch checked={availableOnly} onChange={() => setAvailableOnly(!availableOnly)} />
+              <Switch className='bg-primary' checked={availableOnly} onChange={() => setAvailableOnly(!availableOnly)} />
             </div>
           </div>
           <div>
             <h1>Filter by domian ending</h1>
             <div className='py-4 justify-evenly flex flex-wrap overflow-auto max-h-96'>
               {endingsOptions.map(option => (
-                <Checkbox key={option} id={option} label={option} checked={endings.includes(option)} onChange={() => handleSetEndings(option)} />
+                <Checkbox className='checked:bg-primary' key={option} id={option} label={option} checked={endings.includes(option)} onChange={() => handleSetEndings(option)} />
               ))}
             </div>
           </div>
@@ -85,31 +85,29 @@ const GetNewDomain = () => {
               <Input min={0} type='number' value={priceLimit} onChange={(e) => setPriceLimit(e.target.value)} label="Maximum name price" icon={<FaDollarSign />} />
             </div>
             <Button
-              variant="text"
-              color="red"
               onClick={handleCancelFilters}
-              className="mr-1"
+              className="mr-1 bg-red-500"
             >
               <span>Cancel</span>
             </Button>
-            <Button variant="gradient" color="green" onClick={() => handleOpenFilters(false)}>
+            <Button className='bg-primary' onClick={() => handleOpenFilters(false)}>
               <span>Confirm</span>
             </Button>
           </div>
         </DialogBody>
       </Dialog>
       <div className='flex gap-4 items-center max-w-3xl m-auto pt-12'>
-        <Button onClick={() => handleOpenFilters(true)} className=''>
+        <Button className='bg-primary' onClick={() => handleOpenFilters(true)}>
           <FaFilter></FaFilter>
         </Button>
-        <Button onClick={() => resetAllSearch()} className=''>
+        <Button onClick={() => resetAllSearch()} className='bg-primary'>
           <MdClose></MdClose>
         </Button>
-        <Input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} label="Find your perfect domain name" icon={<FaSearch />} />
+        <Input value={searchQuery} labelProps={{ className: 'text-primary' }} className='border-primary' onChange={(e) => setSearchQuery(e.target.value)} label="Find your perfect domain name" icon={<FaSearch />} />
       </div>
       <div className='flex flex-wrap justify-around p-4 max-w-3xl m-auto'>
         {availableOnly && (
-          <Button className='w-fit flex items-center gap-2 !p-0'>
+          <Button className='w-fit flex items-center gap-2 !p-0 bg-primary'>
             <Typography variant='small' className='tracking text-xs p-2' onClick={() => handleOpenFilters(true)}>Available only</Typography>
             <div className='pr-2' onClick={() => {
               setAvailableOnly(false)
@@ -120,7 +118,7 @@ const GetNewDomain = () => {
           </Button>
         )}
         {priceLimit > 0 && (
-          <Button className='w-fit flex items-center gap-2 !p-0'>
+          <Button className='w-fit flex items-center gap-2 !p-0 bg-primary'>
             <Typography variant='small' className='tracking text-xs p-2' onClick={() => handleOpenFilters(true)}>Price limit ${priceLimit}</Typography>
             <div className='pr-2' onClick={() => {
               setPriceLimit(0)
@@ -131,7 +129,7 @@ const GetNewDomain = () => {
           </Button>
         )}
         {endings.length > 0 && (
-          <Button className='w-fit flex items-center gap-2 !p-0'>
+          <Button className='w-fit flex items-center gap-2 !p-0 bg-primary'>
             <Typography variant='small' className='tracking text-xs p-2' onClick={() => handleOpenFilters(true)}>{endings.slice(0, 3).join(' | ')} {endings.slice(3).length > 0 ? 'and ' + endings.slice(3).length + ' others only' : ''} </Typography>
             <div className='pr-2' onClick={() => {
               setEndings([])
@@ -150,7 +148,7 @@ const GetNewDomain = () => {
                 <div className='flex items-center gap-2'>
                   {domain.isAvailable ? <AiFillCheckCircle className='text-[#1e8e3e]'></AiFillCheckCircle> : <MdOutlineDoNotDisturbAlt className=' text-gray-600'></MdOutlineDoNotDisturbAlt>}
                   <Typography variant='lead'>{domain.name}</Typography>
-                  {domain.isPremium && <Chip className='hidden md:block' value='Premium'></Chip>}
+                  {domain.isPremium && <Chip className='hidden md:block bg-primary' value='Premium'></Chip>}
                 </div>
                 <div className='ml-auto flex items-center justify-around gap-2'>
                   <Typography>${domain.pricePerYear} / year</Typography>

@@ -20,7 +20,7 @@ const Support = () => {
           </div>
           <div className=' flex flex-col gap-8 items-start col-span-2'>
             <Typography className='text-left text-lg md:text-xl lg:text-2xl' variant='paragraph'>Find out how we can help by visiting our global support page.</Typography>
-            <Button>Reach out</Button>
+            <Button className='bg-primary'>Reach out</Button>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@ const Support = () => {
           </div>
           <div className=' flex flex-col gap-8 items-start col-span-2'>
             <Typography className='text-left text-lg md:text-xl lg:text-2xl' variant='paragraph'>Request an unsupported domain ending (TLD) or country.</Typography>
-            <Button>Tell us</Button>
+            <Button className='bg-primary'>Tell us</Button>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ const Support = () => {
           </div>
           <div className=' flex flex-col gap-8 items-start col-span-2'>
             <Typography className='text-left text-lg md:text-xl lg:text-2xl' variant='paragraph'>Find answers to technical questions like transferring a domain, domain management, and troubleshooting.</Typography>
-            <Button>Go to hep center</Button>
+            <Button className='bg-primary'>Go to hep center</Button>
           </div>
         </div>
       </div>

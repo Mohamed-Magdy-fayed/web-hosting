@@ -38,7 +38,7 @@ const UserServices = ({ setDomainData, service }) => {
                                 </div>
                             </div>
                             <div className='px-4'>
-                                <Button onClick={() => navigate(`service/${service.id}`)}>Manage</Button>
+                                <Button className='bg-primary' onClick={() => navigate(`service/${service.id}`)}>Manage</Button>
                             </div>
                         </div>
                     ))}

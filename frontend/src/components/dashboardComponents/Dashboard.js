@@ -42,7 +42,7 @@ const Dashboard = () => {
     <div className='flex-grow flex flex-row relative'>
       <Navbar className={` h-full rounded-none min-w-max z-50 pl-0 pr-4 flex flex-col w-max transition-all ${store.dashboardMenu.isOpened ? 'translate-x-[0] absolute lg:static' : 'translate-x-[-100%] absolute'}`}>
         {dashboardMenuItems.map(item => (
-          <Link onClick={toggleDashboardMenu} key={item.url} to={item.url} className={`pl-4 text-gray-700 flex gap-2 items-center tracking-wide font-[500_0.875rem/1.25rem_"Google_Sans",Roboto,Arial,sans-serif;] rounded-r-3xl p-2 hover:bg-gray-100 ${location.pathname === item.url ? '!bg-primary !bg-opacity-20' : ''}`}>
+          <Link onClick={() => window.innerWidth <= 960 && toggleDashboardMenu} key={item.url} to={item.url} className={`pl-4 text-gray-700 flex gap-2 items-center tracking-wide font-[500_0.875rem/1.25rem_"Google_Sans",Roboto,Arial,sans-serif;] rounded-r-3xl p-2 hover:bg-gray-100 ${location.pathname === item.url ? '!bg-primary !bg-opacity-20' : ''}`}>
             <item.icon></item.icon>
             <span>{item.itemName}</span>
           </Link>

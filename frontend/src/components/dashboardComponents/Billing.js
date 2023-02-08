@@ -21,7 +21,7 @@ const Billing = () => {
           <Typography className='text-base lg:text-lg xl:text-xl' variant='h6'>{user.paymentMethods.length === 0 ? 'No payment methods added yet' : 'Payment methods'}</Typography>
         </div>
         <div className='w-full md:w-fit'>
-          <Button className='py-2 w-full lg:py-4'>
+          <Button className='py-2 w-full lg:py-4 bg-primary'>
             {user.paymentMethods.length === 0 ? 'Add payment method' : 'Manage'}
           </Button>
         </div>

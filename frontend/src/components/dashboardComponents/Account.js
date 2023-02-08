@@ -14,7 +14,7 @@ const Account = () => {
         <Typography variant='lead'>Email notifications</Typography>
         <div className='flex justify-between items-center p-4 relative overflow-hidden border-t border-b border-x rounded-t'>
           <Typography variant='h5'>Marketing emails</Typography>
-          <Button variant='text'>Yes to all</Button>
+          <Button className='text-primary' variant='text'>Yes to all</Button>
         </div>
         <div className={`after:content-[''] relative after:absolute after:top-0 after:bottom-0 after:right-0 after:w-2 after:bg-primary after:bg-opacity-0 hover:after:bg-opacity-20 overflow-hidden cursor-pointer border-b border-x rounded-b`}>
           <Accordion open={open === 1}>
@@ -33,7 +33,7 @@ const Account = () => {
         <Typography variant='lead'>Your account settings</Typography>
         <div className='flex justify-between items-center p-4 relative overflow-hidden border-t border-b border-x rounded-t'>
           <Typography variant='h5'>Option</Typography>
-          <Button variant='text'>Manage</Button>
+          <Button className='text-primary' variant='text'>Manage</Button>
         </div>
         <div className={`after:content-[''] relative after:absolute after:top-0 after:bottom-0 after:right-0 after:w-2 after:bg-primary after:bg-opacity-0 hover:after:bg-opacity-20 overflow-hidden cursor-pointer border-b border-x rounded-b`}>
           <Accordion open={open === 1}>
@@ -52,7 +52,7 @@ const Account = () => {
         <Typography variant='lead'>Your account settings</Typography>
         <div className='flex justify-between items-center p-4 relative overflow-hidden border-t border-b border-x rounded-t'>
           <Typography variant='h5'>Option</Typography>
-          <Button variant='text'>Manage</Button>
+          <Button className='text-primary' variant='text'>Manage</Button>
         </div>
         <div className={`after:content-[''] relative after:absolute after:top-0 after:bottom-0 after:right-0 after:w-2 after:bg-primary after:bg-opacity-0 hover:after:bg-opacity-20 overflow-hidden cursor-pointer border-b border-x rounded-b`}>
           <Accordion open={open === 1}>

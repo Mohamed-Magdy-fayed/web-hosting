@@ -64,7 +64,7 @@ const ProfessionalEmail = () => {
             <HomeSection imgUrl={logo} imgAlt='hero img' hero>
                 <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Get a professional email address</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Use built-in email forwarding or get professional email along with other tools from Google Workspace.</Typography>
-                <Button>Get Clikkle Workspace with the domains</Button>
+                <Button className='bg-primary'>Get Clikkle Workspace with the domains</Button>
             </HomeSection>
             <HomeSection darkerBG centeredTitle={`Email forwarding included with your domain`}>
                 <div className='flex flex-col gap-4'>
@@ -99,8 +99,11 @@ const ProfessionalEmail = () => {
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">an email address at your domain. With Google Workspace, you’ll also get video conferencing, business-grade security, Google's full suite of collaborative apps, and more.</Typography>
                 <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Upgrade to Google Workspace</a>
             </HomeSection>
-            <HomeSection centeredTitle={'All Clikkle Workspace plans include'}>
-                <div className='flex flex-col gap-8 py-4 w-full justify-center items-center border border-gray-400 rounded-lg'>
+            <Typography className='w-full mt-12 text-2xl md:text-3xl xl:text-4xl text-center' variant='h1'>
+                All Clikkle Workspace plans include
+            </Typography>
+            <div className='w-full grid grid-cols-1 place-content-center pb-24 pt-24 gap-10 px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32'>
+                <div className='flex flex-col gap-8 py-4 md:grid md:grid-cols-2 justify-center items-center border border-gray-400 rounded-lg'>
                     {plans.map((plan, i) => (
                         <div key={i} className='flex gap-8 items-center justify-start w-full px-12'>
                             <div className=''>
@@ -114,11 +117,11 @@ const ProfessionalEmail = () => {
                     ))}
                 </div>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant='lead'>All Google Workspace plans include an expanded set of applications, security, and management tools to help manage teams and businesses.</Typography>
-                <Button className='bg-primary'>Get Workspace</Button>
+                <Button className='bg-primary justify-self-start'>Get Workspace</Button>
                 <Link to={`/`} className='text-primary pt-12'>
                     Have a domain from another registrar? Try Google Workspace today.
                 </Link>
-            </HomeSection>
+            </div>
             <HomeSection centeredTitle={'Straightforward pricing'}>
                 <div className='w-full flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-3'>
                     {pricing.map((price, i) => (
@@ -158,7 +161,7 @@ const ProfessionalEmail = () => {
                     <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Find your domain</Typography>
                     <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
                         <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-                        <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-[#1a73e8] border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
+                        <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
                     </form>
                 </div>
                 <div className={`flex justify-center lg:mt-0`}>
