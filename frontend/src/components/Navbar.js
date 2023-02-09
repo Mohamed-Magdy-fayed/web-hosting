@@ -6,6 +6,7 @@ import { logoutUser } from '../api/auth'
 import StoreContext from '../context/store/StoreContext'
 import logo from '../misc/clikkle host logo 2.png'
 import searchIcon from "../misc/search_icon_grey.svg"
+import { SigninButton } from './navComponents/SigninButton'
 
 const navItems = [
     {
@@ -78,7 +79,7 @@ const NavbarComponent = () => {
                 <div className='flex gap-8 items-center'>
                     {!location.pathname.includes('dashboard') && <IconButton
                         variant="text"
-                        className="  !text-primary ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+                        className="  !text-primary ml-auto h-9 w-9 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
                         ripple={false}
                         onClick={() => setOpenNav(!openNav)}
                     >
@@ -154,9 +155,7 @@ const NavbarComponent = () => {
                             <Button className='!min-w-fit !py-2 !px-8 text-white bg-primary border-primary whitespace-nowrap' variant='outlined' onClick={() => navigate('/dashboard')}>My dashboard</Button>
                         </div>
                     ) : !location.pathname.includes('dashboard') && (
-                        <div className='flex justify-around items-center'>
-                            <Button className='!min-w-fit !py-2 !px-8 text-primary border-primary whitespace-nowrap' variant='outlined' onClick={() => navigate('/signin')}>Sign In</Button>
-                        </div>
+                        <SigninButton />
                     )}
                     {location.pathname.includes('dashboard') && (
                         <div className='flex justify-around items-center'>

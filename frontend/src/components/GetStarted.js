@@ -40,9 +40,9 @@ const GetStarted = () => {
 
   return (
     <div className='relative'>
-      <div className='border-b flex flex-wrap items-center justify-evenly sticky top-12 backdrop-blur-3xl'>
+      <div className='border-b flex flex-wrap gap-4 items-center justify-center sticky top-12 backdrop-blur-3xl z-[1000]'>
         {navItems.map(item => (
-          <Link key={item.itemName} className={`py-2 px-2 after:content-[""] after:absolute relative after:bottom-0 after:right-[15%] after:h-1 after:w-[70%] after:rounded-t-md text-black ${location.pathname === item.url ? 'after:bg-primary' : 'border-transparent'} grid items-center h-full`} to={item.url}>
+          <Link key={item.itemName} className={`h-[63px] px-2 after:content-[""] after:absolute relative after:bottom-0 after:right-[15%] after:h-1 after:w-[70%] after:rounded-t-md text-black ${location.pathname === item.url ? 'after:bg-primary' : 'border-transparent'} grid items-center h-full`} to={item.url}>
             <Typography className={`${location.pathname === item.url ? 'text-gray-900' : 'text-gray-600'}`} variant='small'>{item.itemName}</Typography>
           </Link>
         ))}

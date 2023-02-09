@@ -1,8 +1,13 @@
 import { Button, Input, Typography } from '@material-tailwind/react'
 import React from 'react'
 import HomeSection from '../shared/HomeSection'
-import logo from '../../misc/logo.png'
+import emailsectoin from '../../misc/emailsectoin.jpeg'
 import { Link, useNavigate } from 'react-router-dom'
+import Section2 from '../shared/Section2'
+import CenterMainTitle from '../shared/CenterMainTitle'
+import LearnMoreSection from '../shared/LearnMoreSection'
+import FindYourDomainSection from '../shared/FindYourDomainSection'
+import StayUpToDateSection from '../shared/StayUpToDateSection'
 
 const section2Items = [
     {
@@ -61,127 +66,58 @@ const ProfessionalEmail = () => {
 
     return (
         <div className='min-h-screen'>
-            <HomeSection imgUrl={logo} imgAlt='hero img' hero>
-                <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Get a professional email address</Typography>
+            <HomeSection imgUrl={emailsectoin} imgAlt='hero img' hero>
+                <Typography className='text-[28px] md:text-[32px] xl:text-[36px] fonts' variant='h1'>Get a professional email address</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Use built-in email forwarding or get professional email along with other tools from Google Workspace.</Typography>
                 <Button className='bg-primary'>Get Clikkle Workspace with the domains</Button>
             </HomeSection>
-            <HomeSection darkerBG centeredTitle={`Email forwarding included with your domain`}>
-                <div className='flex flex-col gap-4'>
-                    <div className='flex flex-col gap-4 lg:flex-row'>
-                        {section2Items.map(item => (
-                            <div key={item.lead} className='flex flex-col gap-4 md:flex-row lg:flex-col'>
-                                <div className='grid place-items-center'>
-                                    <img src={item.imgSrc} width={100} height={100} alt={item.lead} />
-                                </div>
-                                <div>
-                                    <div>
-                                        <Typography variant='lead'>
-                                            {item.lead}
-                                        </Typography>
-                                    </div>
-                                    <div>
-                                        <Typography variant='paragraph'>
-                                            {item.paragraph}
-                                        </Typography>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <Link to={`/`} className='text-primary pt-12'>
-                    More about email forwarding
-                </Link>
+            <Section2 section2Items={section2Items} title='Email forwarding included with your domain' linkText={'More about email forwarding'} />
+            <HomeSection imgUrl={`https://domains.google/static/images/getting-started/email/credibility.svg`} imgAlt='logo' imageFirst stayCol>
+                <Typography className='font-normal text-2xl md:text-3xl xl:text-[36px] fonts w-full text-center' variant='h1'>Gain credibility with email from Google Workspace</Typography>
+                <Typography className='text-lg lg:text-xl xl:text-2xl w-full text-center' variant="lead">an email address at your domain. With Google Workspace, you’ll also get video conferencing, business-grade security, Google's full suite of collaborative apps, and more.</Typography>
+                <a className=" text-primary no-underline w-full text-center" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Upgrade to Google Workspace</a>
             </HomeSection>
-            <HomeSection imgUrl={`https://domains.google/static/images/getting-started/email/credibility.svg`} imgAlt='logo' imageFirst>
-                <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Gain credibility with email from Google Workspace</Typography>
-                <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">an email address at your domain. With Google Workspace, you’ll also get video conferencing, business-grade security, Google's full suite of collaborative apps, and more.</Typography>
-                <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Upgrade to Google Workspace</a>
-            </HomeSection>
-            <Typography className='w-full mt-12 text-2xl md:text-3xl xl:text-4xl text-center' variant='h1'>
-                All Clikkle Workspace plans include
-            </Typography>
-            <div className='w-full grid grid-cols-1 place-content-center pb-24 pt-24 gap-10 px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32'>
-                <div className='flex flex-col gap-8 py-4 md:grid md:grid-cols-2 justify-center items-center border border-gray-400 rounded-lg'>
+            <CenterMainTitle text={'All Clikkle Workspace plans include'} />
+            <div className=' border-b w-full grid grid-cols-1 place-content-center pb-24 pt-24 gap-10 px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32'>
+                <div className='m-auto flex flex-col max-w-3xl gap-8 py-4 md:grid md:grid-cols-2 justify-center items-center border border-gray-400 rounded-lg'>
                     {plans.map((plan, i) => (
                         <div key={i} className='flex gap-8 items-center justify-start w-full px-12'>
                             <div className=''>
                                 <img className='max-h-16 block' src={plan.img} alt='logo' />
                             </div>
                             <div className='grid place-items-start'>
-                                <Typography className='text-lg lg:text-xl xl:text-2xl' variant='lead'>{plan.lead}</Typography>
-                                <Typography className='text-sm lg:text-base xl:text-lg text-gray-600' variant='small'>{plan.small}</Typography>
+                                <Typography className='text-lg lg:text-xl xl:text-2xl fonts' variant='lead'>{plan.lead}</Typography>
+                                <Typography className='text-sm lg:text-base xl:text-lg fonts text-gray-600' variant='small'>{plan.small}</Typography>
                             </div>
                         </div>
                     ))}
                 </div>
-                <Typography className='text-lg lg:text-xl xl:text-2xl' variant='lead'>All Google Workspace plans include an expanded set of applications, security, and management tools to help manage teams and businesses.</Typography>
-                <Button className='bg-primary justify-self-start'>Get Workspace</Button>
-                <Link to={`/`} className='text-primary pt-12'>
+                <Typography className='text-lg lg:text-xl xl:text-2xl m-auto text-center' variant='lead'>All Google Workspace plans include an expanded set of applications, security, and management tools to help manage teams and businesses.</Typography>
+                <Button className='bg-primary justify-self-start m-auto'>Get Workspace</Button>
+                <Link to={`/`} className='text-primary pt-12 m-auto'>
                     Have a domain from another registrar? Try Google Workspace today.
                 </Link>
             </div>
             <HomeSection centeredTitle={'Straightforward pricing'}>
-                <div className='w-full flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-3'>
+                <div className='w-full flex max-w-[815px] flex-col gap-4 justify-center items-center md:grid md:grid-cols-3'>
                     {pricing.map((price, i) => (
-                        <div key={i} className='bg-white flex flex-col border-b rounded-lg border h-full shadow md:justify-between gap-2 items-center hover:shadow-xl transition-all'>
-                            <div className='h-[60%] flex flex-col gap-2 justify-center items-center w-full pt-4 pb-4'>
-                                <Typography as='div' variant='h6' className=' text-center w-full text-black p-2 text-base md:text-black md:text-xl xl:text-2xl'>{price.name}</Typography>
-                                <Typography as='div' variant='h1' className=' text-center w-full text-black p-2 text-5xl md:text-black md:text-6xl xl:text-7xl'>${price.price}</Typography>
-                                <Typography as='div' variant='small' className=' text-center w-full text-green-600 p-2 text-sm md:text-black md:text-base xl:text-xl'>{price.small}</Typography>
+                        <div key={i} className=' bg-white flex flex-col border-b rounded-lg border h-full shadow md:justify-between gap-2 items-center hover:shadow-xl transition-all'>
+                            <div className='flex flex-col gap-2 justify-center items-center w-full pt-4 pb-4 fonts'>
+                                <Typography as='div' variant='h6' className=' fonts text-center w-full text-black p-2 text-lg md:text-black md:text-xl xl:text-[22px]'>{price.name}</Typography>
+                                <Typography as='div' variant='h1' className=' fonts text-center w-full text-black p-2 text-3xl md:text-black'>${price.price}</Typography>
+                                <Typography as='div' variant='small' className=' fonts text-center w-full text-green-600 p-2 text-sm md:text-black md:text-base xl:text-xl'>{price.small}</Typography>
                             </div>
-                            <div className=' h-[40%] border-t px-2 py-4'>
-                                <Typography className='text-lg lg:text-xl xl:text-2xl' variant='paragraph' >{price.paragraph}</Typography>
+                            <div className='border-t p-8'>
+                                <Typography className='text-base' variant='paragraph' >{price.paragraph}</Typography>
                             </div>
                         </div>
                     ))}
                 </div>
                 <Typography className='text-gray-500 mt-4' variant='h6'>After registering your domain, you have the option to activate the Workspace and switch between plans at any time.</Typography>
             </HomeSection>
-            <HomeSection>
-                <Typography className='text-center w-full' variant='h4'>Learn more</Typography>
-                <Typography className='text-center w-full' variant='lead'>Discover best practices and get your questions answered</Typography>
-                <div className='flex flex-col justify-center w-full max-w-4xl mx-auto items-center gap-4 md:grid md:grid-cols-2'>
-                    {learnMoreItems.map(item => (
-                        <div className='bg-white w-full md:max-w-[100%] flex p-4 border-b rounded-lg border shadow md:grid gap-2 items-center hover:shadow-xl transition-all'>
-                            <div className=''>
-                                <img className='w-20' src={item.icon} alt='logo' />
-                            </div>
-                            <div className='text-left flex flex-col gap-4 p-2'>
-                                <Typography variant='small' className='text-gray-500 text-sm lg:text-base xl:text-lg'>{item.smallTitle}</Typography>
-                                <Typography variant='lead' className='text-lg lg:text-xl xl:text-2xl'>{item.lead}</Typography>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </HomeSection>
-            <HomeSection mobileImgSecond>
-                <div className='flex flex-col text-center lg:text-left gap-4 justify-center items-center lg:items-start'>
-                    <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Find your domain</Typography>
-                    <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
-                        <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-                        <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
-                    </form>
-                </div>
-                <div className={`flex justify-center lg:mt-0`}>
-                    <img
-                        className='section-img-clikkle'
-                        src={logo}
-                        alt={'imgAlt'}
-                    />
-                </div>
-            </HomeSection>
-            <div className='bg-gray-100 p-8 flex flex-col w-full gap-4 items-start lg:flex-row lg:items-center lg:justify-between'>
-                <div className=' max-w-md'>
-                    <Typography className='text-left w-full mb-4' variant='lead'>Stay up to date with Google Domains</Typography>
-                    <Typography className='text-left w-full text-gray-600' variant='small'>Sign up for Google Domains newsletters with product updates, special offers, and insights.</Typography>
-                </div>
-                <div className='flex gap-2 max-h-min w-full max-w-md'>
-                    <Input variant="static" placeholder="Enter your email address" />
-                    <Button className='bg-primary h-full whitespace-nowrap'>Sign Up</Button>
-                </div>
-            </div>
+            <LearnMoreSection />
+            <FindYourDomainSection />
+            <StayUpToDateSection />
         </div>
     )
 }

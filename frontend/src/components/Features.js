@@ -2,7 +2,9 @@ import { Button, Input, Typography } from '@material-tailwind/react'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import HomeSection from './shared/HomeSection'
-import logo from '../misc/logo.png'
+import logo from '../misc/features.jpeg'
+import FindYourDomainSection from './shared/FindYourDomainSection'
+import StayUpToDateSection from './shared/StayUpToDateSection'
 
 const sections = [
   {
@@ -105,32 +107,8 @@ const Features = () => {
           </div>
         </HomeSection>
       ))}
-      <HomeSection mobileImgSecond>
-        <div className='flex flex-col text-center lg:text-left gap-4 justify-center items-center lg:items-start'>
-          <Typography className='text-3xl md:text-4xl xl:text-5xl' variant='h1'>Find your domain</Typography>
-          <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
-            <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-            <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
-          </form>
-        </div>
-        <div className={`flex justify-center lg:mt-0`}>
-          <img
-            className='section-img-clikkle'
-            src={logo}
-            alt={'imgAlt'}
-          />
-        </div>
-      </HomeSection>
-      <div className='bg-gray-100 p-8 flex flex-col w-full gap-4 items-start lg:flex-row lg:items-center lg:justify-between'>
-        <div className=' max-w-md'>
-          <Typography className='text-left w-full mb-4' variant='lead'>Stay up to date with Google Domains</Typography>
-          <Typography className='text-left w-full text-gray-600' variant='small'>Sign up for Google Domains newsletters with product updates, special offers, and insights.</Typography>
-        </div>
-        <div className='flex gap-2 max-h-min w-full max-w-md'>
-          <Input variant="static" placeholder="Enter your email address" />
-          <Button className='bg-primary h-full whitespace-nowrap'>Sign Up</Button>
-        </div>
-      </div>
+      <FindYourDomainSection />
+      <StayUpToDateSection />
     </div>
   )
 }
