@@ -64,7 +64,7 @@ const ChoosePlan = ({ setPlan }) => {
 
 
     return (
-        <div className='bg-indigo-100 px-32 py-8'>
+        <div className='bg-gray-100 px-32 py-8'>
             <div>
                 <h1 className='text-3xl font-bold'>1- Choose a period</h1>
             </div>

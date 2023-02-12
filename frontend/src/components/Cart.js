@@ -33,8 +33,8 @@ const Cart = ({ }) => {
             </div>
             {/* Product info */}
             <div className='flex flex-col w-full'>
-                <div className='bg-indigo-100 mb-8'>
-                    <h1 className='text-5xl text-center font-bold p-4'>Couple <span className='text-accent'>clicks</span> to complete your order</h1>
+                <div className='bg-gray-100 mb-8'>
+                    <h1 className='text-5xl text-center font-bold p-4'>Couple <span className='text-primary'>clicks</span> to complete your order</h1>
                 </div>
                 <div className='px-32'>
                     <h3 className='text-xl'>Selected plan: <span className=' text-primary font-bold'>{product.name}</span></h3>
@@ -85,14 +85,14 @@ const Cart = ({ }) => {
                 </div>
                 <div className='grid grid-cols-2 content-start w-full mt-8'>
                     <ChoosePlan setPlan={setPlan}></ChoosePlan>
-                    <div className='bg-indigo-100 px-32 py-8'>
+                    <div className='bg-gray-100 px-32 py-8'>
                         <div className='flex flex-col gap-4 justify-self-start'>
                             <h1 className='text-3xl font-bold'>2- Create your <span className=' text-primary'>account</span></h1>
                             <form className='flex flex-col p-4 gap-4 min-w-[30rem] rounded-b-lg'>
                                 <div className='flex flex-col gap-2'>
                                     <label className='text-left text-primary'>
                                         <span>Already have an account?</span>
-                                        <span className='text-primary ml-4 cursor-pointer hover:text-accent select-none' click={() => handleModal()}>Login</span>
+                                        <span className='text-primary ml-4 cursor-pointer hover:text-primary select-none' click={() => handleModal()}>Login</span>
                                     </label>
                                     <input onChange={(e) => setEmail(e.target.value)} value={email} required type='email' className='border-2 rounded border-gray-200 focus-visible:border-blue p-2 focus-visible:outline-none' placeholder='email@email.com' />
                                 </div>
@@ -100,7 +100,7 @@ const Cart = ({ }) => {
                         </div>
                     </div>
                 </div>
-                <div className='bg-indigo-100'>
+                <div className='bg-gray-100'>
                     <div className='px-32 py-8 '>
                         <div className='flex flex-col gap-4 justify-self-start'>
                             <h1 className='text-3xl font-bold'>3- Payment <span className=' text-primary'>method</span></h1>

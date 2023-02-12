@@ -5,7 +5,7 @@ const Footer = () => {
 
     return (
         <div className=' bg-[#3c4043] py-8 px-8 text-[#dadce0] text-sm flex flex-col gap-4 w-full'>
-            <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
+            <div className='grid grid-cols-2 lg:grid-cols-5 gap-8'>
                 <div className='flex flex-col items-start text-left'>
                     <Typography className='mb-2' variant='h6'>Get started</Typography>
                     <Typography variant='paragraph'>Domain search</Typography>
@@ -35,6 +35,17 @@ const Footer = () => {
                     <Typography variant='paragraph'>Choosing a name</Typography>
                     <Typography variant='paragraph'>Buying & transferring</Typography>
                     <Typography variant='paragraph'>Hosting & website</Typography>
+                </div>
+                <div className='flex flex-col items-start text-left'>
+                    <Typography className='mb-2' variant='h6'>Hosting</Typography>
+                    <Typography variant='paragraph'>Web hosting</Typography>
+                    <Typography variant='paragraph'>Profissional Web hosting</Typography>
+                    <Typography variant='paragraph'>VPS hosting</Typography>
+                    <Typography variant='paragraph'>Email hosting</Typography>
+                    <Typography variant='paragraph'>CMS hosting</Typography>
+                    <Typography variant='paragraph'>Free website hosting</Typography>
+                    <Typography variant='paragraph'>Website builder</Typography>
+                    <Typography variant='paragraph'>Buy hosting</Typography>
                 </div>
             </div>
             <div>

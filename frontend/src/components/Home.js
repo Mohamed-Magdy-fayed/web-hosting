@@ -41,13 +41,13 @@ const Home = () => {
   return (
     <div>
       <HomeSection hero videoUrl={'https://domains.google/static/images/homepage/hero.mp4'}>
-        <Typography className='font-normal text-3xl md:text-5xl xl:text-[64px] fonts' variant='h1'>Find your place online</Typography>
-        <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Choose from more than 300 domain endings. Get 24/7 Google support from real humans.</Typography>
+        <Typography className='font-normal text-3xl md:text-5xl xl:text-[64px] fonts' variant='h1'>You are the next big thing</Typography>
+        <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Choose an intelligent hosting technology backed by 27/4 Clikkle support from real humans.</Typography>
         <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
-          <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
-          <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
+          <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Type your domain" />
+          <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Try it free</button>
         </form>
-        <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Transfer a domain you already own</a>
+        <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Try it free. No credit card required. instant setup</a>
       </HomeSection>
       <Section2 section2Items={section2Items} title='Put the power of Google behind your domain' linkText={'More reasons to choose Google Domains'} />
       <CenterMainTitle text={'All the tools to get started. All in one place.'} />
