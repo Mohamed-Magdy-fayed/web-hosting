@@ -63,13 +63,13 @@ const Signin = () => {
   }
 
   return (
-    <div className='grid grid-cols-2 items-center min-h-screen gap-12'>
-      <div className='justify-self-end p-12'>
-        <img onClick={() => navigate('/')} className=' w-[4-vw] cursor-pointer' src={logo} alt='logo' />
+    <div className='grid md:grid-cols-2 grid-cols-1 items-center min-h-screen gap-12 p-8'>
+      <div className='lg:justify-self-end justify-self-center lg:p-12'>
+        <img onClick={() => navigate('/')} className='cursor-pointer h-52' src={logo} alt='logo' />
       </div>
-      <div className='flex flex-col gap-4 justify-self-start text-center shadow-md rounded-lg border-t-2 border-t-green'>
+      <div className='flex flex-col gap-4 lg:justify-self-start text-center shadow-md rounded-lg border-t-2 border-t-green'>
         <h1 className='p-2 rounded-t-lg text-2xl font-bold'>Login to your <span className=' text-primary'>account</span></h1>
-        <form className='flex flex-col p-4 gap-4 min-w-[30rem] rounded-b-lg'>
+        <form className='flex flex-col p-4 gap-4 rounded-b-lg'>
           <div className='flex flex-col gap-2'>
             <label className='text-left text-primary'>Email</label>
             <input onChange={(e) => setEmail(e.target.value)} value={email} required type='email' className='border-2 rounded border-gray-200 focus-visible:border-blue p-2 focus-visible:outline-none' placeholder='email@email.com' />

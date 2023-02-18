@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { FaCreditCard, FaSearch } from 'react-icons/fa'
 import { MdAccountCircle, MdContactSupport, MdFeedback, MdMenu } from 'react-icons/md'
 import { BiTransfer } from 'react-icons/bi'
-import { Link, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import StoreContext from '../../context/store/StoreContext'
 import GetNewDomain from './GetNewDomain'
 import MyDomains from './MyDomains'
@@ -11,6 +11,14 @@ import Billing from './Billing'
 import Account from './Account'
 import { Button, Dialog, DialogBody, DialogHeader, Navbar } from '@material-tailwind/react'
 import Service from './Service'
+import WebHosting from '../HostingComponents/WebHosting';
+import ProHosting from '../HostingComponents/ProHosting';
+import VPS from '../HostingComponents/VPS';
+import EmailHosting from '../HostingComponents/EmailHosting';
+import CMS from '../HostingComponents/CMS';
+import FreeHosting from '../HostingComponents/FreeHosting';
+import WebsiteBuilder from '../HostingComponents/WebsiteBuilder';
+import BuyHosting from '../HostingComponents/BuyHosting';
 
 const dashboardMenuItems = [
   { url: '/dashboard/getnewdomain', itemName: 'Get a new domain', icon: FaSearch },
@@ -18,6 +26,14 @@ const dashboardMenuItems = [
   { url: '/dashboard/transfer', itemName: 'Transfer', icon: BiTransfer },
   { url: '/dashboard/billing', itemName: 'Billing', icon: FaCreditCard },
   { url: '/dashboard/account', itemName: 'Account', icon: MdAccountCircle },
+  { url: '/dashboard/webhosting', itemName: 'Web hosting', icon: MdMenu },
+  { url: '/dashboard/pro', itemName: 'Professional hosting', icon: MdMenu },
+  { url: '/dashboard/vps', itemName: 'VPS hosting', icon: MdMenu },
+  { url: '/dashboard/email', itemName: 'Email hosting', icon: MdMenu },
+  { url: '/dashboard/cms', itemName: 'CMS hosting', icon: MdMenu },
+  { url: '/dashboard/free', itemName: 'Free Hosting', icon: MdMenu },
+  { url: '/dashboard/builder', itemName: 'Website builder', icon: MdMenu },
+  { url: '/dashboard/buy', itemName: 'Buy Hosting', icon: MdMenu },
 ]
 
 const otherButtons = [
@@ -27,16 +43,15 @@ const otherButtons = [
 
 const Dashboard = () => {
   const location = useLocation()
-  const navigate = useNavigate()
   const [open, setOpen] = useState({ isOpened: false, title: '' })
-  const { store, toggleDashboardMenu, closeDashboardMenu, setLoading, login, logout } = useContext(StoreContext)
+  const { store, toggleDashboardMenu, closeDashboardMenu } = useContext(StoreContext)
 
   useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth <= 960 && closeDashboardMenu()
     );
-  }, []);
+  });
 
   return (
     <div className='flex-grow flex flex-row relative'>
@@ -63,6 +78,14 @@ const Dashboard = () => {
           <Route path="billing" element={<Billing />} />
           <Route path="account" element={<Account />} />
           <Route path="service/:id" element={<Service />} />
+          <Route path="webhosting" element={<WebHosting />} />
+          <Route path="pro" element={<ProHosting />} />
+          <Route path="vps" element={<VPS />} />
+          <Route path="email" element={<EmailHosting />} />
+          <Route path="cms" element={<CMS />} />
+          <Route path="free" element={<FreeHosting />} />
+          <Route path="builder" element={<WebsiteBuilder />} />
+          <Route path="buy" element={<BuyHosting />} />
         </Routes>
       </div>
       <Dialog className='min-w-fit' open={open.isOpened} handler={() => setOpen({ isOpened: false, title: '' })}>

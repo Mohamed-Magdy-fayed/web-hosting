@@ -1,4 +1,4 @@
-import { Button, Input, Typography } from '@material-tailwind/react'
+import { Button, Typography } from '@material-tailwind/react'
 import React from 'react'
 import HomeSection from '../shared/HomeSection'
 import emailsectoin from '../../misc/emailsectoin.jpeg'
@@ -48,19 +48,6 @@ const pricing = [
     { name: 'Business Plus', price: 18, small: 'user/month', paragraph: 'Email, 5 TB of storage, 250 participant video meetings, and enhanced security and management controls.' },
 ]
 
-const learnMoreItems = [
-    {
-        smallTitle: 'Domain basics',
-        lead: 'When to upgrade to workspace',
-        icon: 'https://domains.google/static/images/options/option-3.webp'
-    },
-    {
-        smallTitle: 'Domain basics',
-        lead: 'how to use email forwarding',
-        icon: 'https://domains.google/static/images/options/option-3.webp'
-    },
-]
-
 const ProfessionalEmail = () => {
     const navigate = useNavigate()
 
@@ -69,13 +56,13 @@ const ProfessionalEmail = () => {
             <HomeSection imgUrl={emailsectoin} imgAlt='hero img' hero>
                 <Typography className='text-[28px] md:text-[32px] xl:text-[36px] fonts' variant='h1'>Get a professional email address</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Use built-in email forwarding or get professional email along with other tools from Google Workspace.</Typography>
-                <Button className='bg-primary'>Get Clikkle Workspace with the domains</Button>
+                <Button onClick={() => navigate('/dashboard')} className='bg-primary'>Get Clikkle Workspace with the domains</Button>
             </HomeSection>
-            <Section2 section2Items={section2Items} title='Email forwarding included with your domain' linkText={'More about email forwarding'} />
+            <Section2 section2Items={section2Items} title='Email forwarding included with your domain' linkText={'More about email forwarding'} linkUrl='/' />
             <HomeSection imgUrl={`https://domains.google/static/images/getting-started/email/credibility.svg`} imgAlt='logo' imageFirst stayCol>
                 <Typography className='font-normal text-2xl md:text-3xl xl:text-[36px] fonts w-full text-center' variant='h1'>Gain credibility with email from Google Workspace</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl w-full text-center' variant="lead">an email address at your domain. With Google Workspace, you’ll also get video conferencing, business-grade security, Google's full suite of collaborative apps, and more.</Typography>
-                <a className=" text-primary no-underline w-full text-center" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Upgrade to Google Workspace</a>
+                <a className=" text-primary no-underline w-full text-center" href="/dashboard">Upgrade to Google Workspace</a>
             </HomeSection>
             <CenterMainTitle text={'All Clikkle Workspace plans include'} />
             <div className=' border-b w-full grid grid-cols-1 place-content-center pb-24 pt-24 gap-10 px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-32'>
@@ -93,13 +80,13 @@ const ProfessionalEmail = () => {
                     ))}
                 </div>
                 <Typography className='text-lg lg:text-xl xl:text-2xl m-auto text-center' variant='lead'>All Google Workspace plans include an expanded set of applications, security, and management tools to help manage teams and businesses.</Typography>
-                <Button className='bg-primary justify-self-start m-auto'>Get Workspace</Button>
-                <Link to={`/`} className='text-primary pt-12 m-auto'>
+                <Button onClick={() => navigate('/dashboard')} className='bg-primary justify-self-start m-auto'>Get Workspace</Button>
+                <Link to='/dashboard' className='text-primary pt-12 m-auto'>
                     Have a domain from another registrar? Try Google Workspace today.
                 </Link>
             </div>
             <HomeSection centeredTitle={'Straightforward pricing'}>
-                <div className='w-full flex max-w-[815px] flex-col gap-4 justify-center items-center md:grid md:grid-cols-3'>
+                <div className='w-full flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-3'>
                     {pricing.map((price, i) => (
                         <div key={i} className=' bg-white flex flex-col border-b rounded-lg border h-full shadow md:justify-between gap-2 items-center hover:shadow-xl transition-all'>
                             <div className='flex flex-col gap-2 justify-center items-center w-full pt-4 pb-4 fonts'>

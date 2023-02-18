@@ -1,52 +1,153 @@
 import { Typography } from '@material-tailwind/react'
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
+const footerGroups = [
+    {
+        groupName: 'Get started',
+        groupLinks: [
+            {
+                url: '/getstarted/domainsearch',
+                linkText: 'Domain search',
+            },
+            {
+                url: '/getstarted/professionalemail',
+                linkText: 'Professional email',
+            },
+            {
+                url: '/getstarted/websitedesign',
+                linkText: 'Website design',
+            },
+            {
+                url: '/getstarted/onlineads',
+                linkText: 'Online ads',
+            },
+        ],
+    },
+    {
+        groupName: 'Related products',
+        groupLinks: [
+            {
+                url: '/',
+                linkText: 'Business Solutions',
+            },
+            {
+                url: '/',
+                linkText: 'Clikkle Ads',
+            },
+            {
+                url: '/',
+                linkText: 'Clikkle Business Profile',
+            },
+            {
+                url: '/',
+                linkText: 'Clikkle Sites',
+            },
+            {
+                url: '/',
+                linkText: 'Clikkle Workspace',
+            },
+            {
+                url: '/',
+                linkText: 'More business products',
+            },
+        ],
+    },
+    {
+        groupName: 'Support',
+        groupLinks: [
+            {
+                url: '/support',
+                linkText: 'Help center',
+            },
+            {
+                url: '/support',
+                linkText: 'FAQ',
+            },
+            {
+                url: '/support',
+                linkText: 'Contact us',
+            },
+        ],
+    },
+    {
+        groupName: 'Learn',
+        groupLinks: [
+            {
+                url: '/learn',
+                linkText: 'Features',
+            },
+            {
+                url: '/learn',
+                linkText: 'Domain basics',
+            },
+            {
+                url: '/learn',
+                linkText: 'Choosing a name',
+            },
+            {
+                url: '/learn',
+                linkText: 'Buying & transferring',
+            },
+            {
+                url: '/learn',
+                linkText: 'Hosting & website',
+            },
+        ],
+    },
+    {
+        groupName: 'Hosting',
+        groupLinks: [
+            {
+                url: '/webhosting',
+                linkText: 'Web hosting',
+            },
+            {
+                url: '/pro',
+                linkText: 'Profissional Web hosting',
+            },
+            {
+                url: '/vps',
+                linkText: 'VPS hosting',
+            },
+            {
+                url: '/email',
+                linkText: 'Email hosting',
+            },
+            {
+                url: '/cms',
+                linkText: 'CMS hosting',
+            },
+            {
+                url: '/free',
+                linkText: 'Free website hosting',
+            },
+            {
+                url: '/builder',
+                linkText: 'Website builder',
+            },
+            {
+                url: '/buy',
+                linkText: 'Buy hosting',
+            },
+        ],
+    },
+]
 
 const Footer = () => {
+    const navigate = useNavigate()
 
     return (
         <div className=' bg-[#3c4043] py-8 px-8 text-[#dadce0] text-sm flex flex-col gap-4 w-full'>
             <div className='grid grid-cols-2 lg:grid-cols-5 gap-8'>
-                <div className='flex flex-col items-start text-left'>
-                    <Typography className='mb-2' variant='h6'>Get started</Typography>
-                    <Typography variant='paragraph'>Domain search</Typography>
-                    <Typography variant='paragraph'>Professional email</Typography>
-                    <Typography variant='paragraph'>Website design</Typography>
-                    <Typography variant='paragraph'>Online ads</Typography>
-                </div>
-                <div className='flex flex-col items-start text-left'>
-                    <Typography className='mb-2' variant='h6'>Related products</Typography>
-                    <Typography variant='paragraph'>Business Solutions</Typography>
-                    <Typography variant='paragraph'>Clikkle Ads</Typography>
-                    <Typography variant='paragraph'>Clikkle Business Profile</Typography>
-                    <Typography variant='paragraph'>Clikkle Sites</Typography>
-                    <Typography variant='paragraph'>Clikkle Workspace</Typography>
-                    <Typography variant='paragraph'>More business products</Typography>
-                </div>
-                <div className='flex flex-col items-start text-left'>
-                    <Typography className='mb-2' variant='h6'>Support</Typography>
-                    <Typography variant='paragraph'>Help Center</Typography>
-                    <Typography variant='paragraph'>FAQ</Typography>
-                    <Typography variant='paragraph'>Contact us</Typography>
-                </div>
-                <div className='flex flex-col items-start text-left'>
-                    <Typography className='mb-2' variant='h6'>Learn</Typography>
-                    <Typography variant='paragraph'>Features</Typography>
-                    <Typography variant='paragraph'>Domain basics</Typography>
-                    <Typography variant='paragraph'>Choosing a name</Typography>
-                    <Typography variant='paragraph'>Buying & transferring</Typography>
-                    <Typography variant='paragraph'>Hosting & website</Typography>
-                </div>
-                <div className='flex flex-col items-start text-left'>
-                    <Typography className='mb-2' variant='h6'>Hosting</Typography>
-                    <Typography variant='paragraph'>Web hosting</Typography>
-                    <Typography variant='paragraph'>Profissional Web hosting</Typography>
-                    <Typography variant='paragraph'>VPS hosting</Typography>
-                    <Typography variant='paragraph'>Email hosting</Typography>
-                    <Typography variant='paragraph'>CMS hosting</Typography>
-                    <Typography variant='paragraph'>Free website hosting</Typography>
-                    <Typography variant='paragraph'>Website builder</Typography>
-                    <Typography variant='paragraph'>Buy hosting</Typography>
-                </div>
+                {footerGroups.map(group => (
+                    <div key={group.groupName} className='flex flex-col items-start text-left'>
+                        <Typography className='mb-2' variant='h6'>{group.groupName}</Typography>
+                        {group.groupLinks.map((link, i) => (
+                            <Link key={i} to={link.url} className='cursor-pointer hover:underline' variant='paragraph'>{link.linkText}</Link>
+                        ))}
+                    </div>
+                ))}
             </div>
             <div>
                 <div className='border-t-2 border-t-white pt-2'>

@@ -30,7 +30,7 @@ const DomainEndingsSection = ({}) => {
                 {needs.map((need, i) => (
                     <label>
                         <input defaultChecked={i === 0} type="radio" name="needs" id={i} class="hidden peer" />
-                        <div class="peer-checked:bg-primary fonts peer-checked:text-white custom-radio rounded-full px-3 py-1 border bg-white cursor-pointer select-none text-sm">{need}</div>
+                        <div className="peer-checked:bg-primary fonts peer-checked:text-white custom-radio rounded-full px-3 py-1 border bg-white cursor-pointer select-none text-sm">{need}</div>
                     </label>
                 ))}
             </div>

@@ -1,7 +1,6 @@
+import { Button, Typography } from '@material-tailwind/react'
 import React, { useState } from 'react'
 import { MdLock, MdTimer } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
-import Button from '../shared/Button'
 
 const PaymentForm = ({ paymentType }) => {
     const [nameOnCard, setnameOnCard] = useState('')
@@ -9,15 +8,8 @@ const PaymentForm = ({ paymentType }) => {
     const [cardDate, setCardDate] = useState('')
     const [cardCVC, setCardCVC] = useState('')
 
-    const navigate = useNavigate()
-
     const handlePaymentSubmit = () => {
-        console.log({
-            nameOnCard,
-            cardNumber,
-            cardDate,
-            cardCVC,
-        });
+        
     }
 
     const handleDateFormat = (e) => {
@@ -60,13 +52,13 @@ const PaymentForm = ({ paymentType }) => {
     }
 
     return (
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             {paymentType === 'CC' ? (
                 <>
-                    <input type="text" value={nameOnCard} onChange={(e) => setnameOnCard(e.target.value)} className="p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary sm:text-sm" placeholder="Name on Card" />
-                    <input type="text" value={cardNumber} onChange={(e) => setCardNumber(cardNumberFormat(e.target.value))} className="hide-number-input-arrows p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary sm:text-sm" placeholder="Card Number" />
-                    <input type="text" value={cardDate} onChange={handleDateFormat} maxLength={5} className="p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary sm:text-sm" placeholder="Expiry Date" />
-                    <input type="text" value={cardCVC} onChange={(e) => setCardCVC(e.target.value)} maxLength={3} className="hide-number-input-arrows p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary sm:text-sm" placeholder="CVC" />
+                    <input type="text" value={nameOnCard} onChange={(e) => setnameOnCard(e.target.value)} className="p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary" placeholder="Name on Card" />
+                    <input type="text" value={cardNumber} onChange={(e) => setCardNumber(cardNumberFormat(e.target.value))} className="hide-number-input-arrows p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary" placeholder="Card Number" />
+                    <input type="text" value={cardDate} onChange={handleDateFormat} maxLength={5} className="p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary" placeholder="Expiry Date" />
+                    <input type="text" value={cardCVC} onChange={(e) => setCardCVC(e.target.value)} maxLength={3} className="hide-number-input-arrows p-3 rounded-md border-2 border-primary pl-7 pr-12 focus:border-primary focus:ring-primary" placeholder="CVC" />
                 </>
             ) : paymentType === 'CG' ? (
                 <div className=' col-span-2 flex flex-col gap-4 p-4'>
@@ -81,17 +73,21 @@ const PaymentForm = ({ paymentType }) => {
             ) : (
                 <></>
             )}
-            <Button text='Submit secure payment' type='primary' click={handlePaymentSubmit}></Button>
+            <Button className='bg-primary' onClick={handlePaymentSubmit}>Submit secure payment</Button>
             <div className='flex flex-col gap-2 items-start'>
                 <span className='flex items-center justify-evenly'><MdTimer></MdTimer> 30-Day Money-Back Guarantee</span>
                 <span className='flex items-center justify-evenly'><MdLock></MdLock> Encrypted and Secure Payments</span>
             </div>
-            <div className='col-span-2 mt-4 text-gray-700 text-base'>
-                By checking out you agree with our
-                <button onClick={() => navigate('/')} className='text-primary hover:text-accent cursor-pointer'> Terms of Service.
-                </button> We will process your personal data for the fulfillment of your order and other purposes as per our
-                <button onClick={() => navigate('/')} className='text-primary hover:text-accent cursor-pointer'> Privacy Policy
-                </button>. You can cancel recurring payments at any time.
+            <div className='md:col-span-2 mt-4 text-gray-700 text-base flex flex-wrap'>
+                <Typography>By checking out you agree with our</Typography>
+                <a href='/' className='text-primary hover:text-accent cursor-pointer'>
+                    Terms of Service.
+                </a>
+                <Typography>We will process your personal data for the fulfillment of your order and other purposes as per our</Typography>
+                <a href='/' className='text-primary hover:text-accent cursor-pointer'>
+                    Privacy Policy
+                </a>
+                <Typography>. You can cancel recurring payments at any time.</Typography>
             </div>
         </div>
     )

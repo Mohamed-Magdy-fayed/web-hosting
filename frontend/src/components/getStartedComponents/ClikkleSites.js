@@ -1,6 +1,6 @@
-import { Button, Input, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from '@material-tailwind/react'
+import { Button, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from '@material-tailwind/react'
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import CenterMainTitle from '../shared/CenterMainTitle'
 import FindYourDomainSection from '../shared/FindYourDomainSection'
 import HomeSection from '../shared/HomeSection'
@@ -24,58 +24,6 @@ const section2Items = [
         imgSrc: 'https://domains.google/static/images/getting-started/website/google-sites/features3.png',
         lead: 'Custom send from any alias',
         paragraph: 'Express your style with our pre-designed font and color palettes',
-    },
-]
-
-const tools = [
-    {
-        name: 'Wix',
-        img: 'https://domains.google/static/images/getting-started/website/partners/wix.png',
-        link: 'Get started',
-        paragraph: 'With 500+ customizable templates, Wix is the perfect place to create a professional website, get advanced design features, business solutions, industry-leading SEO and more.'
-    },
-    {
-        name: 'Squarespace',
-        img: 'https://domains.google/static/images/getting-started/website/partners/bluehost-wordpress.png',
-        link: 'Get started',
-        paragraph: 'Build a website, sell online and build your brand with Squarespace. Just like millions of other dreamers, makers and doers.'
-    },
-    {
-        name: 'Bluehost + Wordpress',
-        img: 'https://domains.google/static/images/getting-started/website/partners/shopify.png',
-        link: 'Get started',
-        paragraph: 'Trusted by over 2 million websites globally, Bluehost allows you to harness the creative power of Wordpress and turn your Google Domain into a beautiful, functional website.'
-    },
-    {
-        name: 'Shopify',
-        img: 'https://domains.google/static/images/getting-started/website/partners/wix.png',
-        link: 'Get started',
-        paragraph: 'Set-up, design and manage your online store with Shopify, to make selling on desktop, mobile, social media, marketplaces, retail locations and pop-up stores easy.'
-    },
-    {
-        name: 'Weebly',
-        img: 'https://domains.google/static/images/getting-started/website/partners/weebly.svg',
-        link: 'Get started',
-        paragraph: 'With customizable designs, domains and eCommerce tools that are perfect for any online venture, Weebly’s powerful site builder makes it easy to create a professional website or online store.'
-    },
-    {
-        name: 'Blogger',
-        img: 'https://domains.google/static/images/getting-started/website/partners/weebly.svg',
-        link: 'Get started',
-        paragraph: 'Create a beautiful blog that fits your style. Choose from a selection of easy-to-use templates — all with flexible layouts and hundreds of background images — or design something new.'
-    },
-]
-
-const learnMoreItems = [
-    {
-        smallTitle: 'Domain basics',
-        lead: 'When to upgrade to workspace',
-        icon: 'https://domains.google/static/images/options/option-3.webp'
-    },
-    {
-        smallTitle: 'Domain basics',
-        lead: 'how to use email forwarding',
-        icon: 'https://domains.google/static/images/options/option-3.webp'
     },
 ]
 
@@ -124,11 +72,11 @@ const ClikkleSites = () => {
                     </TabsBody>
                     <TabsHeader className='bg-primary bg-opacity-25 w-fit'>
                         {data.map(({ value }) => (
-                            <Tab className='bg-primary bg-opacity-25 rounded-full w-8' key={value} value={value}></Tab>
+                            <Tab children={false} className='bg-primary bg-opacity-25 rounded-full w-8' key={value} value={value}></Tab>
                         ))}
                     </TabsHeader>
                 </Tabs>
-                <Button className='bg-primary'>Get started</Button>
+                <Button onClick={() => navigate('/dashboard')} className='bg-primary'>Get started</Button>
             </HomeSection>
             <CenterMainTitle text={'A simple site with powerful tools'} />
             <HomeSection imgUrl={'https://domains.google/static/images/getting-started/website/google-sites/tools1.jpg'} imageFirst imgAlt='logo'>

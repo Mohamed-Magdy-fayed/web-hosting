@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import HomeSection from './HomeSection'
 
-const Section2 = ({ section2Items, title, linkText }) => {
+const Section2 = ({ section2Items, title, linkText, linkUrl }) => {
     return (
         <HomeSection darkerBG centeredTitle={title}>
             <div className='flex flex-col gap-4'>
@@ -29,9 +29,11 @@ const Section2 = ({ section2Items, title, linkText }) => {
                     ))}
                 </div>
             </div>
-            {linkText && <Link to={`/`} className='text-primary pt-12 w-full text-center'>
-                {linkText}
-            </Link>}
+            {linkText && (
+                <Link to={linkUrl} className='text-primary pt-12 w-full text-center'>
+                    {linkText}
+                </Link>
+            )}
         </HomeSection>
     )
 }

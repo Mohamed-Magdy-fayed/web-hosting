@@ -47,29 +47,29 @@ const Home = () => {
           <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Type your domain" />
           <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Try it free</button>
         </form>
-        <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Try it free. No credit card required. instant setup</a>
+        <a className=" text-primary no-underline" href="/cart">Try it free. No credit card required. instant setup</a>
       </HomeSection>
-      <Section2 section2Items={section2Items} title='Put the power of Google behind your domain' linkText={'More reasons to choose Google Domains'} />
+      <Section2 section2Items={section2Items} title='Put the power of Clikkle behind your domain' linkText={'More reasons to choose Clikkle Domains'} linkUrl='/getstarted/domainsearch' />
       <CenterMainTitle text={'All the tools to get started. All in one place.'} />
       <HomeSection imgUrl={section3home} imgAlt='logo' imageFirst>
         <Typography className='text-[28px] md:text-[32px] xl:text-[36px] fonts' variant='h1'>Discover your perfect domain</Typography>
         <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Choose from more than 300 domain endings. Get 24/7 Google support from real humans.</Typography>
-        <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Transfer a domain you already own</a>
+        <a className=" text-primary no-underline" href="/dashboard">Transfer a domain you already own</a>
       </HomeSection>
       <HomeSection imgUrl={emailsectoin} imgAlt='logo'>
         <Typography className='text-[28px] md:text-[32px] xl:text-[36px] fonts' variant='h1'>Get a professional email address</Typography>
         <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Try built-in email forwarding to create up to 100 email aliases, or get professional email along with other tools from Google Workspace.</Typography>
-        <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Learn about Google Workspace and email forwarding</a>
+        <a className=" text-primary no-underline" href="/getstarted/professionalemail">Learn about Google Workspace and email forwarding</a>
       </HomeSection>
       <HomeSection imgUrl={codingsite} imgAlt='logo' imageFirst>
         <Typography className='text-[28px] md:text-[32px] xl:text-[36px] fonts' variant='h1'>Build your site, no coding required</Typography>
         <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Whether you need to build a simple site, a blog, or a robust e-commerce solution, we have the tools and partners to help you build your website like a pro.</Typography>
-        <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Learn how to build and host your site</a>
+        <a className=" text-primary no-underline" href="/learn">Learn how to build and host your site</a>
       </HomeSection>
       <HomeSection imgUrl={market} imgAlt='logo'>
         <Typography className='text-[28px] md:text-[32px] xl:text-[36px] fonts' variant='h1'>Market your business online</Typography>
         <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Get in front of customers searching for businesses like yours with Google Ads. Increase website traffic, phone calls, and store visits all on any budget.</Typography>
-        <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Learn about Google Ads</a>
+        <a className=" text-primary no-underline" href="/onlineads">Learn about Google Ads</a>
       </HomeSection>
       <DomainEndingsSection />
       <LearnMoreSection />

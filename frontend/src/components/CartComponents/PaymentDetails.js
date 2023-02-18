@@ -28,8 +28,8 @@ const PaymentDetails = ({ product, plan, paymentType }) => {
     }
 
     return (
-        <div className='bg-white flex flex-col gap-8 max-w-2xl shadow-md col-span-2 p-4 border-2 rounded-md border-primary text-lg font-bold'>
-            <div className='flex justify-between items-center'>
+        <div className='bg-white flex flex-col gap-8 text-lg font-bold lg:col-span-2'>
+            <div className='flex flex-row justify-between lg:items-center'>
                 <span>{product.name} - {plan.period === 1 ? plan.period + ' Month' : plan.period + ' Months'} plan</span>
                 <CartLine total={details.total} totalAfterDiscount={details.totalAfterDiscount} showDiscount></CartLine>
             </div>

@@ -1,4 +1,4 @@
-import { Button, Input, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from '@material-tailwind/react'
+import { Button, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from '@material-tailwind/react'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import HomeSection from '../shared/HomeSection'
@@ -67,19 +67,6 @@ const tools = [
     },
 ]
 
-const learnMoreItems = [
-    {
-        smallTitle: 'Domain basics',
-        lead: 'When to upgrade to workspace',
-        icon: 'https://domains.google/static/images/options/option-3.webp'
-    },
-    {
-        smallTitle: 'Domain basics',
-        lead: 'how to use email forwarding',
-        icon: 'https://domains.google/static/images/options/option-3.webp'
-    },
-]
-
 const data = [
     {
         label: "1",
@@ -113,7 +100,7 @@ const WebsiteDesign = () => {
                 <Typography className='font-normal text-3xl md:text-5xl xl:text-[64px] fonts' variant='h1'>Build your site, no coding required</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Free resources from Google and professional tools to design and host your website.</Typography>
             </HomeSection>
-            <Section2 section2Items={section2Items} title='How to pick a website builder' linkText={'More about how to choose a website builder'} />
+            <Section2 section2Items={section2Items} title='How to pick a website builder' linkText={'More about how to choose a website builder'} linkUrl='/dashboard' />
             <HomeSection centeredTitle={'Start for free with Google Sites'}>
                 <Tabs value="html" className='w-full grid place-items-center'>
                     <TabsBody>
@@ -125,12 +112,12 @@ const WebsiteDesign = () => {
                     </TabsBody>
                     <TabsHeader className='bg-primary bg-opacity-25 w-fit'>
                         {data.map(({ value }) => (
-                            <Tab className='bg-primary bg-opacity-25 rounded-full w-8' key={value} value={value}></Tab>
+                            <Tab children={[]} className='bg-primary bg-opacity-25 rounded-full w-8' key={value} value={value}></Tab>
                         ))}
                     </TabsHeader>
                 </Tabs>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant='lead'>Simply add text and drag and drop in your own photos, videos, and more. Your website will automatically work on both desktop and mobile — all with zero coding.</Typography>
-                <Button className='bg-primary'>Get started</Button>
+                <Button onClick={() => navigate(('/dashboard'))} className='bg-primary'>Get started</Button>
             </HomeSection>
             <HomeSection darkerBG centeredTitle={'Other tools for a pro look'}>
                 <div className='w-full flex flex-col gap-4 justify-center items-center md:grid md:grid-cols-3'>
@@ -142,7 +129,7 @@ const WebsiteDesign = () => {
                             <div className='border-t px-8 py-4 text-left'>
                                 <Typography className=' text-primary text-lg lg:text-xl xl:text-2xl' variant='lead' >{tool.name}</Typography>
                                 <Typography className='text-lg lg:text-xl xl:text-2xl my-8' variant='paragraph' >{tool.paragraph}</Typography>
-                                <Link to={`/`} className='text-primary pt-12'>{tool.link}</Link>
+                                <Link to='/' className='text-primary pt-12'>{tool.link}</Link>
                             </div>
                         </div>
                     ))}

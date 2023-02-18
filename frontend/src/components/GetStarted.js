@@ -42,18 +42,20 @@ const GetStarted = () => {
     <div className='relative'>
       <div className='border-b flex flex-wrap gap-4 items-center justify-center sticky top-12 backdrop-blur-3xl z-[1000]'>
         {navItems.map(item => (
-          <Link key={item.itemName} className={`h-[63px] px-2 after:content-[""] after:absolute relative after:bottom-0 after:right-[15%] after:h-1 after:w-[70%] after:rounded-t-md text-black ${location.pathname === item.url ? 'after:bg-primary' : 'border-transparent'} grid items-center h-full`} to={item.url}>
+          <Link to={item.url} key={item.itemName} className={`h-[63px] px-2 after:content-[""] after:absolute relative after:bottom-0 after:right-[15%] after:h-1 after:w-[70%] after:rounded-t-md text-black ${location.pathname === item.url ? 'after:bg-primary' : 'border-transparent'} grid items-center h-full`}>
             <Typography className={`${location.pathname === item.url ? 'text-gray-900' : 'text-gray-600'}`} variant='small'>{item.itemName}</Typography>
           </Link>
         ))}
       </div>
-      <Routes>
-        <Route path='/domainsearch' element={<DomainSearch />} />
-        <Route path='/professionalemail' element={<ProfessionalEmail />} />
-        <Route path='/websitedesign' element={<WebsiteDesign />} />
-        <Route path='/clikklesites' element={<ClikkleSites />} />
-        <Route path='/onlineads' element={<OnlineAds />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path='domainsearch' element={<DomainSearch />} />
+          <Route path='professionalemail' element={<ProfessionalEmail />} />
+          <Route path='websitedesign' element={<WebsiteDesign />} />
+          <Route path='clikklesites' element={<ClikkleSites />} />
+          <Route path='onlineads' element={<OnlineAds />} />
+        </Routes>
+      </div>
     </div>
   )
 }

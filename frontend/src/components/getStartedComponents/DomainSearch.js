@@ -1,6 +1,5 @@
 import { Typography } from '@material-tailwind/react'
 import React from 'react'
-import { FaIcons } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 import HomeSection from '../shared/HomeSection'
 import section3home from '../../misc/section3home.jpeg'
@@ -31,75 +30,21 @@ const section2Items = [
     },
 ]
 
-const needs = [
-    'Popular',
-    'Art & Design',
-    'Banking & Finance',
-    'Community & Sports',
-    'Marketing & Comms',
-    'Tech & Dev',
-    'Service & Retail',
-]
-
-const domainEndings = [
-    { name: '.com', price: 12 },
-    { name: '.org', price: 12 },
-    { name: '.net', price: 12 },
-    { name: '.dev', price: 12 },
-    { name: '.app', price: 14 },
-    { name: 'co', price: 30 },
-    { name: '.me', price: 14 },
-    { name: 'us', price: 30 },
-]
-
-const learnMoreItems = [
-    {
-        smallTitle: 'Buying and transferring',
-        lead: 'how to come up with a good domain name',
-        icon: <FaIcons size={50} />
-    },
-    {
-        smallTitle: 'Buying and transferring',
-        lead: 'how to come up with a good domain name',
-        icon: <FaIcons size={50} />
-    },
-    {
-        smallTitle: 'Buying and transferring',
-        lead: 'how to come up with a good domain name',
-        icon: <FaIcons size={50} />
-    },
-    {
-        smallTitle: 'Buying and transferring',
-        lead: 'how to come up with a good domain name',
-        icon: <FaIcons size={50} />
-    },
-    {
-        smallTitle: 'Buying and transferring',
-        lead: 'how to come up with a good domain name',
-        icon: <FaIcons size={50} />
-    },
-    {
-        smallTitle: 'Buying and transferring',
-        lead: 'how to come up with a good domain name',
-        icon: <FaIcons size={50} />
-    },
-]
-
 const DomainSearch = () => {
     const navigate = useNavigate()
 
     return (
         <div className='min-h-screen'>
-            <HomeSection imgUrl={section3home} imgAlt='hero img' hero>
+            <HomeSection imgUrl={section3home} imgAlt='hero img'>
                 <Typography className='font-normal text-3xl md:text-5xl xl:text-[64px] fonts' variant='h1'>Discover your perfect domain</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl' variant="lead">Learn how to choose a memorable name and select the right domain ending.</Typography>
                 <form className="grid grid-cols-[1fr_94px] gap-0 justify-center items-center w-full rounded shadow mt-7 mx-auto mb-0 text-left">
                     <input className="h-16 pt-5 pr-0 pb-6 pl-14 w-full border-0 focus-visible:outline-none rounded-tl rounded-bl bg-[url(../misc/search_icon_grey.svg)] bg-no-repeat bg-[20px_center] text-base font-semibold" placeholder="Search for your domain" />
                     <button onClick={() => navigate('/cart')} className="flex justify-center items-center text-white p-0 w-full h-full rounded-tr rounded-br bg-primary border-0 font-semibold font-[Arial,sans-serif;]" type="button">Get it</button>
                 </form>
-                <a className=" text-primary no-underline" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Transfer a domain you already own</a>
+                <a className="text-primary no-underline" href="/dashboard">Transfer a domain you already own</a>
             </HomeSection>
-            <Section2 section2Items={section2Items} title='Choose the right domain name' linkText='Read more about how to choose a domain' />
+            <Section2 section2Items={section2Items} title='Choose the right domain name' linkText='Read more about how to choose a domain' linkUrl='/learn' />
             <HomeSection darkerBG centeredTitle={`Choose the right domain name`}>
                 <div className='flex flex-col gap-4'>
                     <div className='flex flex-col gap-4 lg:flex-row'>
@@ -124,14 +69,14 @@ const DomainSearch = () => {
                         ))}
                     </div>
                 </div>
-                <Link to={`/`} className='text-primary pt-12'>
+                <Link to='/learn' className='text-primary pt-12'>
                     Read more about how to choose a domain
                 </Link>
             </HomeSection>
             <HomeSection imgUrl={`https://domains.google/static/images/getting-started/domain/endings.svg`} imgAlt='logo' imageFirst stayCol>
                 <Typography className='font-normal text-2xl md:text-3xl xl:text-[36px] fonts w-full text-center' variant='h1'>Pick from more than 300 domain endings</Typography>
                 <Typography className='text-lg lg:text-xl xl:text-2xl w-full text-center' variant="lead">Let the world know what you’re all about before they even reach your website. From .com to .design to .app express yourself with a descriptive domain ending that helps your business stand out.</Typography>
-                <a className=" text-primary no-underline w-full text-center" href="https://domains.google.com/m/registrar/transfer?_ga=2.259577162.1111017506.1675291279-1738315705.1675291279">Read more about domain endings</a>
+                <a className=" text-primary no-underline w-full text-center" href="/dashboard">Read more about domain endings</a>
             </HomeSection>
             <DomainEndingsSection />
             <LearnMoreSection />
